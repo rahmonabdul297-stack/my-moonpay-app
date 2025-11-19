@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../public/styles/global.css";
 import { ToastContainer } from "react-toastify";
 import GeneralLayout from "./layouts/GeneralLayout";
-import HomePage from "./pages";
+import HomePage from "./pages/home"
 
 function App() {
   return (

@@ -5,20 +5,31 @@
   src: local("Sohn") url("../fonts/TestSohne-BuchKursiv-BF663d89cd3e887.otf")
     format("opentype");
 }
+a{
+  @apply font-bold cursor-pointer
+}
+
+h2{
+  @apply text-xl
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+@apply font-bold
+}
 
 * {
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 body {
   font-family: Sohn, Arial, Helvetica, sans-serif;
 }
 
-.container {
-  @apply max-w-[1300px] mx-auto;
+.box {
+  @apply max-w-[85%] lg:max-w-[1100px] mx-auto;
 }
 
-a {
-  @apply cursor-pointer;
-}
