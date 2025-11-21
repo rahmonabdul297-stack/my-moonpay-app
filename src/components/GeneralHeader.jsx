@@ -6,6 +6,40 @@ import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 const GeneralHeader = () => {
+  // desktop header menu
+  const [buyOver, setbuyOver] = useState(false);
+  const [sellOver, setsellOver] = useState(false);
+  const [swapOver, setswapOver] = useState(false);
+  const [Langsetttings, setLangsetttings] = useState(false);
+  const handlebuyOver = () => {
+    if (buyOver === false) {
+      setbuyOver(true);
+    } else {
+      setbuyOver(false);
+    }
+  };
+  const handlesellOver = () => {
+    if (sellOver === false) {
+      setsellOver(true);
+    } else {
+      setsellOver(false);
+    }
+  };
+  const handleswapOver = () => {
+    if (swapOver === false) {
+      setswapOver(true);
+    } else {
+      setswapOver(false);
+    }
+  };
+  //mobile header menu
+  const [menuDrop, setmenuDrop] = useState(false);
+  const [buyDrop, setbuyDrop] = useState(false);
+  const [sellDrop, setsellDrop] = useState(false);
+  const [swapDrop, setswapDrop] = useState(false);
+  const [cryptopriceDrop, setcryptopriceDrop] = useState(false);
+  const [learnDrop, setlearnDrop] = useState(false);
+
   const availableCoin = [
     {
       id: 1,
@@ -50,12 +84,7 @@ const GeneralHeader = () => {
       src: "https://payload-marketing.moonpay.com/api/media/file/ul1weao7rn-7p0PTY893ZacomhXZ08FGD",
     },
   ];
-  const [menuDrop, setmenuDrop] = useState(false);
-  const [buyDrop, setbuyDrop] = useState(false);
-  const [sellDrop, setsellDrop] = useState(false);
-  const [swapDrop, setswapDrop] = useState(false);
-  
-  const [cryptopriceDrop, setcryptopriceDrop] = useState(false);const [learnDrop, setlearnDrop] = useState(false);
+
   const handlemenuDrop = () => {
     if (menuDrop === false) {
       setmenuDrop(true);
@@ -78,7 +107,7 @@ const GeneralHeader = () => {
     }
   };
 
-   const handleswapDrop = () => {
+  const handleswapDrop = () => {
     if (swapDrop === false) {
       setswapDrop(true);
     } else {
@@ -106,27 +135,154 @@ const GeneralHeader = () => {
       <div className="box hidden lg:flex items-center justify-between">
         {/* Left side */}
         <div className="flex items-center gap-8">
-          <img src="/images/logo-coloured.png" alt="" className="h-7" />
+          <Link to="/home">
+            <img src="/images/logo-coloured.png" alt="" className="h-7" />
+          </Link>
 
           <div className="flex gap-4 items-center">
-            <Link to="/" className="">
+            <Link to="/home" className="hover:text-[#8d8c8e]">
               Individuals
             </Link>
-            <Link to="/" className="">
+            <Link to="/business" className="hover:text-[#8d8c8e]">
               Business
             </Link>
           </div>
 
-          <div className="ml-5 flex gap-4 items-center font-semibold">
-            <Link to="">Buy</Link>
-            <Link to="">Sell</Link>
-            <Link to="">Swap</Link>
-            <CgMenuGridR size={30} />
+          <div className="ml-5 flex gap-4 items-center font-semibold ">
+            <div className="hover:text-[#8d8c8e]" onClick={handlebuyOver}>
+              Buy
+            </div>
+            <div className={buyOver ? "" : "hidden"}>
+              <div className="fixed left-[300px] top-[85px] w-[200px] h-[250px] bg-[#f9f8fb] rounded-md capitalize p-4 flex flex-col gap-3">
+                <h6>buy crypto</h6>
+                <p className="text-xs text-[#8d8c8e]">
+                  use a card, Apple Pay or Google pay to buy crypto fast. We
+                  also accept bank transfers and wires
+                </p>
+              </div>
+              <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
+                {availableCoin.map((item, id) => {
+                  return (
+                    <div
+                      className="flex gap-3 items-center rounded-md capitalize p-4"
+                      key={id}
+                    >
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="h-10 w-10 rounded-full p-1"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <h3>{item.coin}</h3>
+                        <span className="uppercase font-medium text-[#8d8c8e]">
+                          {item.abbr}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="hover:text-[#8d8c8e]" onClick={handlesellOver}>
+              Sell
+            </div>
+            <div className={sellOver ? "z-10" : "hidden"}>
+              <div className="fixed left-[300px] top-[85px] w-[200px] h-[250px] bg-[#f9f8fb] rounded-md capitalize p-4 flex flex-col gap-3">
+                <h6>sell crypto</h6>
+                <p className="text-xs text-[#8d8c8e]">
+                  turn your crypto into cash. in a flash. get paid straight to
+                  your bank account or visa card.
+                </p>
+              </div>
+              <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
+                {availableCoin.map((item, id) => {
+                  return (
+                    <div
+                      className="flex gap-3 items-center rounded-md capitalize p-4"
+                      key={id}
+                    >
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="h-10 w-10 rounded-full p-1"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <h3>{item.coin}</h3>
+                        <span className="uppercase font-medium text-[#8d8c8e]">
+                          {item.abbr}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="hover:text-[#8d8c8e]" onClick={handleswapOver}>
+              Swap
+            </div>
+
+            <div className={swapOver ? "z-10" : "hidden"}>
+              <div className="fixed left-[300px] top-[85px] w-[200px] h-[250px] bg-[#f9f8fb] rounded-md capitalize p-4 flex flex-col gap-3">
+                <h6>Swap crypto</h6>
+                <p className="text-xs text-[#8d8c8e]">
+                  swap between tokens, even if they're on different chains (we
+                  make bridging seamless too)
+                </p>
+              </div>
+              <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
+                {availableCoin.map((item, id) => {
+                  return (
+                    <div
+                      className="flex gap-3 items-center rounded-md capitalize p-4"
+                      key={id}
+                    >
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="h-10 w-10 rounded-full p-1"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <h3>{item.coin}</h3>
+                        <span className="uppercase font-medium text-[#8d8c8e]">
+                          {item.abbr}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <CgMenuGridR size={20} />
           </div>
         </div>
 
         <div className="flex items-center justify-between gap-3">
-          <TbWorld size={30} />
+          <TbWorld
+            size={20}
+            onMouseOver={() => {
+              if (Langsetttings === false) {
+                setLangsetttings(true);
+              } else {
+                setLangsetttings(false);
+              }
+            }}
+          />
+          <div
+            className={
+              Langsetttings
+                ? "fixed top-[90px] right-30 font-bold w-[200px] flex flex-col gap-6 p-5 rounded-md bg-white capitalize"
+                : "hidden"
+            }
+          >
+            <div>language</div>
+            <div className="bg-[#d8d7d9] px-1 py-3 rounded-md flex items-center justify-between">
+              english <FaAngleRight />
+            </div>
+          </div>
           <button className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
             get started
           </button>
@@ -137,7 +293,11 @@ const GeneralHeader = () => {
       <div className="box lg:hidden flex justify-between">
         <img src="/images/logo-coloured.png" alt="" className="h-7" />
         <div onClick={handlemenuDrop}>
-          {menuDrop ? <IoClose size={30} /> : <CgMenuGridR size={30} />}
+          {menuDrop ? (
+            <IoClose size={30} className="rotate" />
+          ) : (
+            <CgMenuGridR size={30} className="rotate" />
+          )}
         </div>
       </div>
 
@@ -226,21 +386,21 @@ const GeneralHeader = () => {
                 })}
               </div>
             </div>
-             <div className="flex justify-between" onClick={handleswapDrop}>
-           {swapDrop ? <FaAngleLeft /> : ""}
+            <div className="flex justify-between" onClick={handleswapDrop}>
+              {swapDrop ? <FaAngleLeft /> : ""}
               <div>{swapDrop ? "back to main menu" : "swap"}</div>
               {swapDrop ? "" : <FaAngleRight />}
             </div>
             <div className={swapDrop ? "py-8" : "hidden"}>
-             
               <div className="bg-[#f2f2f2] p-2 rounded-md">
                 <h6>swap crypto</h6>
                 <p className="text-xs">
-                  swap between tokens, even if they're on different chains (we make bridging seamless too)
+                  swap between tokens, even if they're on different chains (we
+                  make bridging seamless too)
                 </p>
               </div>
-               <div className="mt-5 flex flex-col items-start gap-4">
-                 {availableCoin.map((item, id) => {
+              <div className="mt-5 flex flex-col items-start gap-4">
+                {availableCoin.map((item, id) => {
                   return (
                     <div className="flex items-center gap-3" key={id}>
                       <img
@@ -258,22 +418,25 @@ const GeneralHeader = () => {
                     </div>
                   );
                 })}
-                </div>
+              </div>
             </div>
-         
+
             <div className="flex justify-between">
               company <FaAngleRight />
             </div>
-            <div className="flex justify-between"onClick={handlecryptopriceDrop} >
-            {cryptopriceDrop ? <FaAngleLeft /> : ""}
-              <div>{cryptopriceDrop ? "back to main menu" : "crypto prices"}</div>
+            <div
+              className="flex justify-between"
+              onClick={handlecryptopriceDrop}
+            >
+              {cryptopriceDrop ? <FaAngleLeft /> : ""}
+              <div>
+                {cryptopriceDrop ? "back to main menu" : "crypto prices"}
+              </div>
               {cryptopriceDrop ? "" : <FaAngleRight />}
             </div>
-              <div className={cryptopriceDrop ? "py-8" : "hidden"}>
-             
-             
-               <div className="mt-5 flex flex-col items-start gap-4">
-                 {availableCoin.map((item, id) => {
+            <div className={cryptopriceDrop ? "py-8" : "hidden"}>
+              <div className="mt-5 flex flex-col items-start gap-4">
+                {availableCoin.map((item, id) => {
                   return (
                     <div className="flex items-center gap-3" key={id}>
                       <img
@@ -291,24 +454,22 @@ const GeneralHeader = () => {
                     </div>
                   );
                 })}
-                </div>
-                </div>
+              </div>
+            </div>
             <div className="flex justify-between" onClick={handlelearnDrop}>
-               {learnDrop ? <FaAngleLeft /> : ""}
+              {learnDrop ? <FaAngleLeft /> : ""}
               <div>{learnDrop ? "back to main menu" : "learn"}</div>
               {learnDrop ? "" : <FaAngleRight />}
             </div>
-             <div className={learnDrop ? "py-8" : "hidden"}>
-             
-             
-               <div className="mt-5 flex flex-col items-start gap-4">
-                 <Link to="">what is blockchain ?</Link>
-                 <Link to="">what are NFTs ?</Link>
-                 <Link to="">what is bitcoin mining ?</Link>
-                 <Link to="">what is DeFi ?</Link>
-                 <Link to="">what is crypto staking ?</Link>
-                </div>
-                </div>
+            <div className={learnDrop ? "py-8" : "hidden"}>
+              <div className="mt-5 flex flex-col items-start gap-4">
+                <Link to="">what is blockchain ?</Link>
+                <Link to="">what are NFTs ?</Link>
+                <Link to="">what is bitcoin mining ?</Link>
+                <Link to="">what is DeFi ?</Link>
+                <Link to="">what is crypto staking ?</Link>
+              </div>
+            </div>
             <div className="flex justify-between">
               support <FaAngleRight />
             </div>

@@ -63,7 +63,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col ">
           <h2>personal</h2>
-          <div className="mt-4 flex flex-col  gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col  gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               buy Crypto
             </Link>
@@ -84,7 +84,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>Business</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               on ramps
             </Link>
@@ -108,7 +108,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>company</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               about us
             </Link>
@@ -132,7 +132,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>support</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               API docs
             </Link>
@@ -153,7 +153,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>buy</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               buy Bitcoin
             </Link>
@@ -171,7 +171,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>sell</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               sell Bitcoin
             </Link>
@@ -192,7 +192,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>swap</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               swap ethereum
             </Link>
@@ -213,7 +213,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>crpto prices</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               Bitcoin price
             </Link>
@@ -234,7 +234,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>learn</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               what is blockchain ?
             </Link>
@@ -255,7 +255,7 @@ const GeneralFooter = () => {
 
         <div className=" capitalize flex flex-col">
           <h2>legal</h2>
-          <div className="mt-4 flex flex-col gap-3 text-[#625e56]">
+          <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
             <Link to="" className="hover:text-white">
               licenses
             </Link>
@@ -271,8 +271,8 @@ const GeneralFooter = () => {
           </div>
         </div>
 
-        <div className="w-[80%]  text-2xl flex justify-between lg:justify-start lg:gap-8  text-[#625e56]">
-          <Link to="" className="hover:text-white">
+        <div className="w-[80%]  text-2xl flex justify-between lg:justify-start lg:gap-8  text-[#625e56] ">
+          <Link to="https://web.facebook.com/officialmoonpay/?_rdc=1&_rdr#" className="hover:text-white">
             <FaFacebook />
           </Link>
           <Link to="" className="hover:text-white">
