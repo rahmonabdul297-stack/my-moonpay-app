@@ -19,8 +19,8 @@ const GeneralFooter = () => {
   };
   return (
     <div className="bg-black py-16">
-      <div className="box text-white flex flex-col flex-wrap lg:px-20 lg:flex-row justify-between  gap-8">
-        <div className="">
+      <div className="box text-white flex flex-col flex-wrap  lg:flex-row justify-between  gap-8">
+        <div className="" >
           <img
             src="https://www.moonpay.com/assets/logo-full-white.svg"
             alt=""
@@ -298,7 +298,7 @@ const GeneralFooter = () => {
               onChange={(e) => e.target.value}
             />
             <div
-              className="bg-[#222] px-4 py-2 rounded-xl"
+              className="bg-[#222] text-center py-2 px-4 rounded-xl"
               onClick={handlesubmitEmail}
             >
               {submitEmail ? "submitting..." : "subscribe"}

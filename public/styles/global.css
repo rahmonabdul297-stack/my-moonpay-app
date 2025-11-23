@@ -19,11 +19,12 @@ h3,
 h4,
 h5,
 h6 {
-@apply font-bold
+@apply font-bold overflow-y-hidden
 }
 
 * {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,7 +52,7 @@ body {
   @apply flex gap-1
 }
 .slideright{
-  animation: slideright 60s infinite;
+  animation: slideright 100s infinite;
 }
 @keyframes slideright {
  from{ transform:translateX(50%)}
@@ -60,7 +61,7 @@ body {
 
 
 .slideleft{
-  animation: slideleft 60s infinite;
+  animation: slideleft 100s infinite;
 }
 @keyframes slideleft {
  from{ transform:translateX(-50%)}

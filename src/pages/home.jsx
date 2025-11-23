@@ -104,7 +104,7 @@ const HomePage = () => {
         <video autoPlay loop ref={videoRef} className="mt-16 rounded-4xl ">
           <source src="https://payload-marketing.moonpay.com/api/media/file/Moon_Web_LeadVideo-Overlay-1920x1080-v1-RC.webm" />
         </video>
-        <div className="absolute  w-[200px] lg:w-[400px] h-[200px] text-center font-bold top-2 lg:top-[30%] left-[20%] lg:left-[30%] text-2xl lg:text-6xl">
+        <div className="absolute  w-[200px] lg:w-[400px] h-[200px] text-center font-bold top-2 lg:top-[30%] left-[20%] lg:left-[30%] text-2xl lg:text-5xl overflow-y-hidden">
           {" "}
           Buy. Sell. Go. Instantly. Only with MoonPay.
         </div>
@@ -116,7 +116,7 @@ const HomePage = () => {
           >
             {pausevideo ? <BsPause /> : <GrPlayFill />}
           </div>
-          <div className="hidden lg:flex w-[60%] text-center">
+          <div className="hidden lg:flex w-[60%] text-center ">
             MoonPay keeps it simple. You hold the keys - we are non-custodial,
             so your crypto always stays in your control.
           </div>
@@ -127,7 +127,7 @@ const HomePage = () => {
       </div>
       <section className="box text-black mt-[200px] flex flex-col items-center lg:flex-row justify-between gap-20">
         <div className=" capitalize flex flex-col items-start gap-5">
-          <h4 className=" text-2xl lg:text-5xl ">
+          <h4 className=" text-2xl lg:text-5xl overflow-y-hidden">
             Countless tokens at your fingertips.
           </h4>
           <div>
@@ -135,7 +135,7 @@ const HomePage = () => {
             MoonPay - simple, direct, decentralized trading that keeps you in
             control.
           </div>
-          <div className="primaryBtn capitalize h-10">discover</div>
+          <div className="primaryBtn capitalize h-10 overflow-y-hidden">discover</div>
         </div>
 
         <div className="flex flex-col items-center">
@@ -312,7 +312,7 @@ const HomePage = () => {
       />
       <section className="box py-20">
         <div className="flex flex-col gap-3">
-          <h5 className="text-5xl">See what our customers say</h5>
+          <h5 className="text-5xl overflow-y-hidden">See what our customers say</h5>
           <Link
             to="https://www.trustpilot.com/review/moonpay.com"
             className="border border-black w-[250px] gap-1 p-1 rounded-md flex items-center"
@@ -339,8 +339,9 @@ const HomePage = () => {
 
      
       
-         <div className="flex justify-between   slideright">
-          <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+         <section className="flex flex-col items-center">
+          <div className=" w-[1200px] flex justify-between gap-4  slideright">
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -362,7 +363,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
          
-             <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+             <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -384,7 +385,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -406,7 +407,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -430,8 +431,8 @@ const HomePage = () => {
           
         </div>
        
-        <div className="flex justify-between   slideleft">
-          <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+        <div className=" mt-4 w-[1200px] flex justify-between gap-4  slideleft">
+          <div className="   bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -453,7 +454,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
          
-             <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+             <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -475,7 +476,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -497,7 +498,7 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className="w-[300px] h-[300px]  bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
            <div className="flex justify-between gap-2 items-center">
              <div className="ratingStar">
               <FaStar />
@@ -520,6 +521,7 @@ const HomePage = () => {
           </div>
           
         </div>
+         </section>
       
     </div>
   );

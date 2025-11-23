@@ -21,6 +21,7 @@ function App() {
         />
         <Routes>
           <Route element={<GeneralLayout />}>
+           <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
           </Route>
          <Route element={<BusinessLayout />}>
