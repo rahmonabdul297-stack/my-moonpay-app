@@ -3,24 +3,50 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { errorNotification, successNotification } from "../utils/helper";
+import {
+  errorNotification,
+  infoNotification,
+  successNotification,
+} from "../utils/helper";
 
 const GeneralFooter = () => {
   const [submitEmail, setsubmitEmail] = useState(false);
+  const [subscribe, setsubscribe] = useState();
+  const url = "https://jsonplaceholder.typicode.com/posts";
 
-  const handlesubmitEmail = () => {
-    if (submitEmail.tostring().includes("@")) {
-      setsubmitEmail(true);
-      successNotification("submitted!");
+  const handlesubmitEmail = async () => {
+    setsubmitEmail(true)
+     if(subscribe.toString().includes("@")){
+       const payload = { subscribe };
+      const response = await fetch(url, {
+        method: "post",
+        body:JSON.stringify(payload),
+      });
+       const responseData = await response.json()
+  console.log(response.status)
+      successNotification("success!")
+    console.log("subscribe:",subscribe)
+      console.log("responseData:", responseData);
+  
+    if (response.status.toString().includes("20")) {
+      successNotification("success!");
     } else {
       errorNotification("something when wrong!");
     }
+     }else{
+      infoNotification("@ must be included!")
+     }
+ ;
+  
     setsubmitEmail(false);
-  };
+  }
+  
+
+
   return (
     <div className="bg-black py-16">
       <div className="box text-white flex flex-col flex-wrap  lg:flex-row justify-between  gap-8">
-        <div className="" >
+        <div className="">
           <img
             src="https://www.moonpay.com/assets/logo-full-white.svg"
             alt=""
@@ -43,11 +69,11 @@ const GeneralFooter = () => {
             type="text"
             placeholder="Email Address"
             className="bg-[#222] px-4 py-2 rounded-xl"
-            onChange={(e) => e.target.value}
+            onChange={(e) => setsubscribe(e.target.value)}
           />
           <div
             className="bg-[#222] px-4 py-2 rounded-xl"
-            onClick={handlesubmitEmail}
+            onClick={submitEmail? null:handlesubmitEmail}
           >
             {submitEmail ? "submitting..." : "subscribe"}
           </div>
@@ -272,7 +298,10 @@ const GeneralFooter = () => {
         </div>
 
         <div className="w-[80%]  text-2xl flex justify-between lg:justify-start lg:gap-8  text-[#625e56] ">
-          <Link to="https://web.facebook.com/officialmoonpay/?_rdc=1&_rdr#" className="hover:text-white">
+          <Link
+            to="https://web.facebook.com/officialmoonpay/?_rdc=1&_rdr#"
+            className="hover:text-white"
+          >
             <FaFacebook />
           </Link>
           <Link to="" className="hover:text-white">
@@ -290,33 +319,31 @@ const GeneralFooter = () => {
         </div>
         <div className="hidden lg:w-[100%] lg:flex lg:justify-between items-center gap-2">
           <div className="flex flex-col justify-between gap-3 w-[50%]">
-           <div className="flex justify-between gap-2">
-             <input
-              type="text"
-              placeholder="Email Address"
-              className="bg-[#222] px-4 py-2 rounded-xl w-full"
-              onChange={(e) => e.target.value}
-            />
-            <div
-              className="bg-[#222] text-center py-2 px-4 rounded-xl"
-              onClick={handlesubmitEmail}
-            >
-              {submitEmail ? "submitting..." : "subscribe"}
+            <div className="flex justify-between gap-2">
+              <input
+                type="text"
+                placeholder="Email Address"
+                className="bg-[#222] px-4 py-2 rounded-xl w-full"
+                onChange={(e) => e.target.value}
+              />
+              <div
+                className="bg-[#222] text-center py-2 px-4 rounded-xl"
+                onClick={handlesubmitEmail}
+              >
+                {submitEmail ? "submitting..." : "subscribe"}
+              </div>
             </div>
-
-           </div>
             <div>
-             <div className="hidden lg:flex items-start gap-2">
-          <input type="checkbox" className="bg-[#222]" />
-          <p className="text-[#625e56]">
-            Check this box to receive communications from MoonPay. You can
-            unsubscribe at any time. We look after your data - see our privacy
-            policy.
-          </p>
-        </div>
-          </div>
+              <div className="hidden lg:flex items-start gap-2">
+                <input type="checkbox" className="bg-[#222]" />
+                <p className="text-[#625e56]">
+                  Check this box to receive communications from MoonPay. You can
+                  unsubscribe at any time. We look after your data - see our
+                  privacy policy.
+                </p>
+              </div>
             </div>
-            
+          </div>
 
           <div>
             <div className=" hidden lg:flex items-center gap-3 text-white capitalize">

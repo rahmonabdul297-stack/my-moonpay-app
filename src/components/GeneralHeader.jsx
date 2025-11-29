@@ -130,9 +130,12 @@ const GeneralHeader = () => {
   };
 
   return (
-    <div className="  w-screen py-5 bg-[#F9F8FB] shadow-sm z-10 fixed">
+    <div className="  w-screen pb-5 bg-[#F9F8FB] shadow-sm z-10 fixed">
       {/* Desktop navbar */}
-      <div className="box hidden lg:flex items-center justify-between">
+      <div className="bg-[#d8c8ff] w-full  py-3 text-sm text-center">
+        MoonPay has secured its New York Trust Charter → <Link to="https://www.prnewswire.com/news-releases/moonpay-secures-new-york-trust-charter-to-expand-regulated-financial-infrastructure-302625161.html" className="underline font-semibold">Learn More</Link>
+      </div>
+      <div className="box hidden lg:flex items-center justify-between pt-2">
         {/* Left side */}
         <div className="flex items-center gap-8">
           <Link to="/home">
@@ -310,12 +313,12 @@ const GeneralHeader = () => {
       >
         <div className=" box flex flex-col items-start  gap-8 capitalize">
           <div className="  px-3 flex justify-start gap-6 mt-4">
-            <div className="bg-[#e9e7ee] px-2 py-1 rounded text-black/75 border ">
+            <Link to="/" className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "onClick={handlemenuDrop}>
               Individuals
-            </div>
-            <div className="bg-[#e9e7ee] px-2 py-1 rounded text-black/75 border ">
+            </Link>
+            <Link to="/business" className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "onClick={handlemenuDrop}>
               Business
-            </div>
+            </Link>
           </div>
           <div className="mt-6 w-full flex flex-col gap-4">
             <div className=" flex justify-between" onClick={handlebuyDrop}>
