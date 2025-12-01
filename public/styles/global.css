@@ -34,7 +34,17 @@ body {
 .box {
   @apply max-w-[85%] lg:max-w-[1000px] mx-auto;
 }
-
+.Animwrapper{
+  width: 100%;
+  overflow-x: hidden;
+}
+.innerwrapper{
+  animation: moveLeft 5s linear infinite;
+}
+@keyframes moveLeft{
+from{transform:translateX(0%)}
+to{transform:translateX(-10%)}
+}
 .rotate{
   animation: roll 1s 1
 }

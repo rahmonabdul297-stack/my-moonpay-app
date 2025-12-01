@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
-import { FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import {
+  FaAngleDown,
+  FaAngleLeft,
+  FaAngleRight,
+  FaAngleUp,
+} from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import { TbWorld } from "react-icons/tb";
@@ -13,7 +18,7 @@ const BusinessHeader = () => {
   const [swapDrop, setswapDrop] = useState(false);
   const [cryptopriceDrop, setcryptopriceDrop] = useState(false);
   const [learnDrop, setlearnDrop] = useState(false);
-  const [productDrop,setproductDrop]=useState(false)
+  const [productDrop, setproductDrop] = useState(false);
 
   const availableCoin = [
     {
@@ -103,13 +108,13 @@ const BusinessHeader = () => {
       setlearnDrop(false);
     }
   };
-  const handleproductDrop=()=>{
-     if (productDrop === false) {
+  const handleproductDrop = () => {
+    if (productDrop === false) {
       setproductDrop(true);
     } else {
       setproductDrop(false);
     }
-  }
+  };
   return (
     <div className=" w-screen pb-5 bg-[#F9F8FB] shadow-sm z-10 fixed">
       <div className="bg-[#d8c8ff] w-full  py-3 text-sm text-center">
@@ -139,73 +144,101 @@ const BusinessHeader = () => {
         </div>
         <div className="flex justify-between gap-2 items-center">
           <div className="flex items-center">
-            products <FaAngleDown onMouseOver={handleproductDrop}/>
+            products 
+            {productDrop ? (
+              <FaAngleUp onMouseOver={handleproductDrop} />
+            ) : (
+              <FaAngleDown onMouseOver={handleproductDrop} />
+            )}
           </div>
-          <div className={productDrop?"px-20 py-10 w-screen bg-[#fcfcfc] fixed left-0 top-32 h-[80vh] flex":"hidden"}>
-            <div className="w-[30%] font-bold capitalize text-2xl">Products</div>
+          <div
+            className={
+              productDrop
+                ? "px-20 py-10 w-screen bg-[#fcfcfc] fixed left-0 top-32 h-[80vh] flex"
+                : "hidden"
+            }
+          >
+            <div className="w-[30%] font-bold capitalize text-2xl">
+              Products
+            </div>
             <div className="w-[60%] flex flex-wrap gap-5">
               <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff] font-bold">oncramps 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-                Let your consumers buy crypto within your app or website using
-                local fiat payment methods.
-              </div>
-              </div>
-
-              <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">offcramps 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-                A lighting fast way to sell crypto, increase revenue, and reduce customer attrition — all with just a few lines of code.
-              </div>
+                <div className="flex justify-between capitalize hover:text-[#7d00ff] font-bold">
+                  oncramps
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Let your consumers buy crypto within your app or website using
+                  local fiat payment methods.
+                </div>
               </div>
 
               <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">swaps 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-              Allow your users to swap crypto cross-chain and with low fees.
-              </div>
-              </div>
-
-              <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">virtual account 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-                Issue virtual USD accounts. Settle to stablecoins. All via API.
-              </div>
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  offcramps
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  A lighting fast way to sell crypto, increase revenue, and
+                  reduce customer attrition — all with just a few lines of code.
+                </div>
               </div>
 
               <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">commerce 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-             Accept crypto payments instantly with a simple, secure checkout. Power deposits, subscriptions, and e-commerce with stablecoin settlements — all through MoonPay.
-              </div>
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  swaps
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Allow your users to swap crypto cross-chain and with low fees.
+                </div>
               </div>
 
               <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">otherlife 
-                <PiArrowCircleRightThin size={30} />
-              </div>
-              <div className="text-[#a6a6a6]">
-               Award-Winning Web3 Agency supporting our partners with Ideation, Strategy, Communications, Marketing and Front-End Development.
-              </div>
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  virtual account
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Issue virtual USD accounts. Settle to stablecoins. All via
+                  API.
+                </div>
               </div>
 
-               <div className="w-[300px] border-t py-5">
-                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">iron 
-                <PiArrowCircleRightThin size={30} />
+              <div className="w-[300px] border-t py-5">
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  commerce
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Accept crypto payments instantly with a simple, secure
+                  checkout. Power deposits, subscriptions, and e-commerce with
+                  stablecoin settlements — all through MoonPay.
+                </div>
               </div>
-              <div className="text-[#a6a6a6]">
-               Stablecoin payment infrastructure offering APIs for global on/off-ramping, wallets, and virtual accounts – built for developers.
+
+              <div className="w-[300px] border-t py-5">
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  otherlife
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Award-Winning Web3 Agency supporting our partners with
+                  Ideation, Strategy, Communications, Marketing and Front-End
+                  Development.
+                </div>
               </div>
+
+              <div className="w-[300px] border-t py-5">
+                <div className="flex justify-between capitalize hover:text-[#7d00ff]  font-bold">
+                  iron
+                  <PiArrowCircleRightThin size={30} />
+                </div>
+                <div className="text-[#a6a6a6]">
+                  Stablecoin payment infrastructure offering APIs for global
+                  on/off-ramping, wallets, and virtual accounts – built for
+                  developers.
+                </div>
               </div>
             </div>
           </div>
@@ -417,9 +450,12 @@ const BusinessHeader = () => {
               </div>
             </div>
             <div>
-              <div className="text-center py-2 px-4 bg-black text-white rounded-2xl capitalize">
+              <Link
+                to="/depositcrypto"
+                className="text-center py-2 px-4 bg-black text-white rounded-2xl capitalize"
+              >
                 get started
-              </div>
+              </Link>
             </div>
           </div>
         </div>

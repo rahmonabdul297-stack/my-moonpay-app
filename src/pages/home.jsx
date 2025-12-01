@@ -64,29 +64,52 @@ const HomePage = () => {
           </div>
           <div className="capitalize w-full mt-10 relative">
             <h6 className="text-xl"> trusted by:</h6>
-            <marquee behavior="scroll" direction="" scrollamount="5px">
-              <div className="flex justify-between items-center gap-10 ">
-                <img src="/images/Mastercard.png" alt="" className="h-16" />
-                <img src="/images/PayPal.png" alt="" className="h-16" />
-                <img src="/images/Uniswap.png" alt="" className="h-16" />
-                <img src="/images/Venmo.png" alt="" className="h-16" />
+            <div className="Animwrapper">
+              <div className="flex gap-6 innerwrapper">
+                <img src="/images/Mastercard.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/PayPal.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/Uniswap.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/Venmo.png" alt="" className="h-16 w-[350px]" />
                 <img
                   src="https://payload-marketing.moonpay.com/api/media/file/Trust.png/"
                   alt=""
-                  className="h-16"
+                  className="h-16 w-[350px]"
                 />
                 <img
                   src="https://payload-marketing.moonpay.com/api/media/file/Ledger.png"
                   alt=""
-                  className="h-16"
+                  className="h-16 w-[350px]"
                 />{" "}
                 <img
                   src="https://payload-marketing.moonpay.com/api/media/file/MetaMask.png"
                   alt=""
-                  className="h-16"
+                  className="h-16 w-[350px]"
                 />{" "}
+
+                {/* duplicates */}
+                 <img src="/images/Mastercard.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/PayPal.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/Uniswap.png" alt="" className="h-16 w-[350px]" />
+                <img src="/images/Venmo.png" alt="" className="h-16 w-[350px]" />
+
+                <img
+                  src="https://payload-marketing.moonpay.com/api/media/file/Trust.png/"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />
+                <img
+                  src="https://payload-marketing.moonpay.com/api/media/file/Ledger.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />{" "}
+                <img
+                  src="https://payload-marketing.moonpay.com/api/media/file/MetaMask.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />{" "}
+
               </div>
-            </marquee>
+            </div>
             <div className="bg-white/80 h-20 w-4 absolute bottom-0"></div>
             <div className="bg-white/55 h-20 w-4 absolute right-0 bottom-0"></div>
           </div>

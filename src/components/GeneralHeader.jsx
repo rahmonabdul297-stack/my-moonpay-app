@@ -286,9 +286,9 @@ const GeneralHeader = () => {
               english <FaAngleRight />
             </div>
           </div>
-          <button className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
+          <Link to="/depositcrypto" className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
             get started
-          </button>
+          </Link>
         </div>
       </div>
 

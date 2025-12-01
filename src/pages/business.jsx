@@ -200,9 +200,9 @@ const YourComponent = () => {
   return (
     <div className="w-full py-32">
       <section className="pl-12 flex flex-col lg:flex-row justify-between gap-4">
-        <div className="w-[80%] lg:w-[40%] flex flex-col items-start gap-6 text-white">
+        <div className="w-[80%] mx-auto lg:w-[40%] flex flex-col items-center gap-6 text-white">
           <h4 className="uppercase text-[#7d00ff]">Crypto On-Ramp</h4>
-          <div className="text-5xl font-bold text-black overflow-y-hidden">
+          <div className="text-2xl lg:text-5xl font-bold text-black overflow-y-hidden">
             Boost your revenue with the world's #1 crypto on-ramp
           </div>
           <div className="text-[#5b6067] font-normal ">
@@ -1339,7 +1339,7 @@ const YourComponent = () => {
 
            <div className="flex flex-col items-center justify-center gap-3 bg-[#eff3f9] h-[300px] lg:w-[300px] rounded-lg p-4">
             <img
-              src="https://payload-marketing.moonpay.com/api/media/file/tzvowpeu9x-7FIX5NryDrwoZGvMye5DSu?w=128&q=90"
+              src="https://payload-marketing.moonpay.com/api/media/file/grrfaac3hj-2jAnGgWZwz7Sz2PbwQqqiq?w=128&q=90"
               alt=""
               className="h-20 w-20"
             />

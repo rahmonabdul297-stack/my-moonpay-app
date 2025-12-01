@@ -8,6 +8,7 @@ import {
   infoNotification,
   successNotification,
 } from "../utils/helper";
+import { MoonLoader } from "react-spinners";
 
 const GeneralFooter = () => {
   const [submitEmail, setsubmitEmail] = useState(false);
@@ -73,9 +74,9 @@ const GeneralFooter = () => {
           />
           <div
             className="bg-[#222] px-4 py-2 rounded-xl"
-            onClick={submitEmail? null:handlesubmitEmail}
+            onClick={submitEmail ? null:handlesubmitEmail}
           >
-            {submitEmail ? "submitting..." : "subscribe"}
+            {submitEmail ? <MoonLoader size={10} color="#fff"/> : "subscribe"}
           </div>
         </div>
         <div className="flex lg:hidden items-start gap-2">
@@ -324,7 +325,7 @@ const GeneralFooter = () => {
                 type="text"
                 placeholder="Email Address"
                 className="bg-[#222] px-4 py-2 rounded-xl w-full"
-                onChange={(e) => e.target.value}
+                onChange={(e) => setsubscribe(e.target.value)}
               />
               <div
                 className="bg-[#222] text-center py-2 px-4 rounded-xl"
