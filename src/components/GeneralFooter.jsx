@@ -91,19 +91,19 @@ const GeneralFooter = () => {
         <div className=" capitalize flex flex-col ">
           <h2>personal</h2>
           <div className="mt-4 flex flex-col  gap-3 text-[#625e56] text-sm">
-            <Link to="" className="hover:text-white">
+            <Link to="/" className="hover:text-white">
               buy Crypto
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/" className="hover:text-white">
               sell Crypto
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/" className="hover:text-white">
               swap Crypto
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/" className="hover:text-white">
               learn about Crypto
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/" className="hover:text-white">
               Crypto price
             </Link>
           </div>

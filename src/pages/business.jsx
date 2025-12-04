@@ -572,7 +572,7 @@ const YourComponent = () => {
             <div className=" p-1 mx-auto bg-[#dddde1]  shadow-black shadow-2xl"></div>
           </div>
         </div>
-        <div className="lg:w-[50%]  bg-[#eff3f9] z-[1]">
+        <div className="lg:w-[50%]  bg-[#eff3f9] z-1">
           <div className="bg-white mx-auto h-1 rounded-2xl shadow-inner shadow-black"></div>
           <div className="p-1 mx-auto bg-[#dddde1]  "></div>
         </div>
@@ -1334,7 +1334,7 @@ const YourComponent = () => {
             />
             <h4>On-Ramp</h4>
             <div>The leading way to buy crypto.</div>
-            <div className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg">learn more</div>
+            <Link to="/business" className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg">learn more</Link>
           </div>
 
            <div className="flex flex-col items-center justify-center gap-3 bg-[#eff3f9] h-[300px] lg:w-[300px] rounded-lg p-4">

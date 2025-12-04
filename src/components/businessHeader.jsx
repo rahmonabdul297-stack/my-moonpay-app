@@ -242,9 +242,9 @@ const BusinessHeader = () => {
               </div>
             </div>
           </div>
-          <button className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
+         <Link to="/buycrypto"  className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
             get started
-          </button>
+          </Link>
         </div>
       </div>
       {/* business mobile header */}
@@ -451,7 +451,7 @@ const BusinessHeader = () => {
             </div>
             <div>
               <Link
-                to="/depositcrypto"
+                to="/buycrypto"
                 className="text-center py-2 px-4 bg-black text-white rounded-2xl capitalize"
               >
                 get started

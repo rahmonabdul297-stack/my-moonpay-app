@@ -133,7 +133,13 @@ const GeneralHeader = () => {
     <div className="  w-screen pb-5 bg-[#F9F8FB] shadow-sm z-10 fixed">
       {/* Desktop navbar */}
       <div className="bg-[#d8c8ff] w-full  py-3 text-sm text-center">
-        MoonPay has secured its New York Trust Charter → <Link to="https://www.prnewswire.com/news-releases/moonpay-secures-new-york-trust-charter-to-expand-regulated-financial-infrastructure-302625161.html" className="underline font-semibold">Learn More</Link>
+        MoonPay has secured its New York Trust Charter →{" "}
+        <Link
+          to="https://www.prnewswire.com/news-releases/moonpay-secures-new-york-trust-charter-to-expand-regulated-financial-infrastructure-302625161.html"
+          className="underline font-semibold"
+        >
+          Learn More
+        </Link>
       </div>
       <div className="box hidden lg:flex items-center justify-between pt-2">
         {/* Left side */}
@@ -286,7 +292,10 @@ const GeneralHeader = () => {
               english <FaAngleRight />
             </div>
           </div>
-          <Link to="/depositcrypto" className="py-2 px-4 bg-black text-white rounded-2xl capitalize">
+          <Link
+            to="/buycrypto"
+            className="py-2 px-4 bg-black text-white rounded-2xl capitalize"
+          >
             get started
           </Link>
         </div>
@@ -313,10 +322,18 @@ const GeneralHeader = () => {
       >
         <div className=" box flex flex-col items-start  gap-8 capitalize">
           <div className="  px-3 flex justify-start gap-6 mt-4">
-            <Link to="/" className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "onClick={handlemenuDrop}>
+            <Link
+              to="/"
+              className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "
+              onClick={handlemenuDrop}
+            >
               Individuals
             </Link>
-            <Link to="/business" className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "onClick={handlemenuDrop}>
+            <Link
+              to="/business"
+              className="bg-[#F9F8FB] px-2 py-1 rounded text-black/75 border "
+              onClick={handlemenuDrop}
+            >
               Business
             </Link>
           </div>
@@ -487,9 +504,13 @@ const GeneralHeader = () => {
               </div>
             </div>
             <div>
-              <div className="text-center py-2 px-4 bg-black text-white rounded-2xl capitalize">
+              <Link
+                to="/buycrypto"
+                className="w-full overflow-hidden text-center py-2 px-4 bg-black text-white rounded-2xl capitalize"
+                 onClick={handlemenuDrop}
+              >
                 get started
-              </div>
+              </Link>
             </div>
           </div>
         </div>

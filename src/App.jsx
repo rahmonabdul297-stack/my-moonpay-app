@@ -5,7 +5,7 @@ import GeneralLayout from "./layouts/GeneralLayout";
 import HomePage from "./pages/home";
 import BusinessPage from "./pages/business";
 import BusinessLayout from "./layouts/businessLayout";
-import DepositPage from "./pages/depositcrypto";
+import BuycryptoPage from "./pages/buycrypto";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           <Route element={<GeneralLayout />}>
            <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
-          <Route path="/depositcrypto" element={<DepositPage />}/>
+          <Route path="/buycrypto" element={<BuycryptoPage />}/>
           </Route>
          <Route element={<BusinessLayout />}>
             <Route path="/business" element={<BusinessPage />} />

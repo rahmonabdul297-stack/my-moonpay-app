@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [pausevideo, setpausevideo] = useState(false);
+  const [fixedCont, setFixedCont] = useState(false);
+
   const videoRef = useRef(null);
 
   const handlepausevideo = () => {
@@ -18,8 +20,18 @@ const HomePage = () => {
       videoRef.current.pause();
     }
   };
-  return (
-    <div className=" py-24">
+
+  setInterval(() => {
+    if (fixedCont === false) {
+      setFixedCont(true);
+    }else{
+       setFixedCont(false);
+    }
+  }, 5000);
+    
+
+    return (
+    <div className=" pt-28">
       <div className="box flex flex-col  lg:flex-row justify-between  lg:gap-20 items-center ">
         <div className="flex flex-col  gap-4 text-3xl text-black font-black mt-5">
           <div className="flex items-center gap-4">
@@ -62,14 +74,30 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="capitalize w-full mt-10 relative">
-            <h6 className="text-xl"> trusted by:</h6>
+          <div className="capitalize w-full mt-10 relative ">
+            <h6 className="text-xl py-10"> trusted by:</h6>
             <div className="Animwrapper">
               <div className="flex gap-6 innerwrapper">
-                <img src="/images/Mastercard.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/PayPal.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/Uniswap.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/Venmo.png" alt="" className="h-16 w-[350px]" />
+                <img
+                  src="/images/Mastercard.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />
+                <img
+                  src="/images/PayPal.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />
+                <img
+                  src="/images/Uniswap.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />
+                <img
+                  src="/images/Venmo.png"
+                  alt=""
+                  className="h-16 w-[350px]"
+                />
                 <img
                   src="https://payload-marketing.moonpay.com/api/media/file/Trust.png/"
                   alt=""
@@ -85,29 +113,6 @@ const HomePage = () => {
                   alt=""
                   className="h-16 w-[350px]"
                 />{" "}
-
-                {/* duplicates */}
-                 <img src="/images/Mastercard.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/PayPal.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/Uniswap.png" alt="" className="h-16 w-[350px]" />
-                <img src="/images/Venmo.png" alt="" className="h-16 w-[350px]" />
-
-                <img
-                  src="https://payload-marketing.moonpay.com/api/media/file/Trust.png/"
-                  alt=""
-                  className="h-16 w-[350px]"
-                />
-                <img
-                  src="https://payload-marketing.moonpay.com/api/media/file/Ledger.png"
-                  alt=""
-                  className="h-16 w-[350px]"
-                />{" "}
-                <img
-                  src="https://payload-marketing.moonpay.com/api/media/file/MetaMask.png"
-                  alt=""
-                  className="h-16 w-[350px]"
-                />{" "}
-
               </div>
             </div>
             <div className="bg-white/80 h-20 w-4 absolute bottom-0"></div>
@@ -158,7 +163,9 @@ const HomePage = () => {
             MoonPay - simple, direct, decentralized trading that keeps you in
             control.
           </div>
-          <div className="primaryBtn capitalize h-10 overflow-y-hidden">discover</div>
+          <div className="primaryBtn capitalize h-10 overflow-y-hidden">
+            discover
+          </div>
         </div>
 
         <div className="flex flex-col items-center">
@@ -241,13 +248,15 @@ const HomePage = () => {
 
       <section className="box py-6 flex flex-col lg:flex-row justify-between">
         <div className="bg-[#F9F8FB] h-[450px] w-[320px] rounded-2xl">
-          <img
-            src="https://payload-marketing.moonpay.com/api/media/file/purchase.jpg"
-            alt=""
-            className="rounded-tr-2xl rounded-tl-2xl"
-          />
+          <video loop autoPlay controls>
+            <source
+              src="https://payload-marketing.moonpay.com/api/media/file/MP_WebAnims_Buy-v3.mp4"
+              alt=""
+              className="rounded-tr-2xl rounded-tl-2xl"
+            />
+          </video>
           <div className="flex flex-col items-start gap-4 capitalize p-5">
-            <h4>Purchase</h4>
+            <h4>buy</h4>
             <div className="text-sm">
               Buy crypto instantly with Apple Pay, Google Pay or your card.
               PayPal, Venmo and bank transfers are also available in select
@@ -259,11 +268,13 @@ const HomePage = () => {
           </div>
         </div>
         <div className="bg-[#F9F8FB] h-[450px] w-[320px] rounded-2xl">
-          <img
-            src="https://payload-marketing.moonpay.com/api/media/file/sell.jpg"
-            alt=""
-            className="rounded-tr-2xl rounded-tl-2xl"
-          />
+          <video loop autoPlay controls>
+            <source
+              src="https://payload-marketing.moonpay.com/api/media/file/MP_WebAnims_Sell-v5.mp4"
+              alt=""
+              className="rounded-tr-2xl rounded-tl-2xl"
+            />
+          </video>
           <div className="flex flex-col items-start gap-4 capitalize p-5">
             <h4>sell</h4>
             <div className="text-sm">
@@ -276,20 +287,22 @@ const HomePage = () => {
           </div>
         </div>
         <div className="bg-[#F9F8FB] h-[450px] w-[320px] rounded-2xl">
-          <img
-            src="https://payload-marketing.moonpay.com/api/media/file/deposit-withdraw.jpg"
-            alt=""
-            className="rounded-tr-2xl rounded-tl-2xl"
-          />
+          <video loop autoPlay controls>
+            <source
+              src="https://payload-marketing.moonpay.com/api/media/file/MP_WebAnims_SendReceive-v6.mp4"
+              alt=""
+              className="rounded-tr-2xl rounded-tl-2xl"
+            />
+          </video>
           <div className="flex flex-col items-start gap-4 capitalize px-5 py-5">
-            <h4>Deposit and withdraw</h4>
+            <h4>send and recieve</h4>
             <div className="text-sm">
               Move funds your way. Transfer between your bank, card, MoonPay
               Balance or deposit from another wallet. You are always in control
               of your money, just like your crypto.
             </div>
             <div className="bg-black text-white px-3 py-2 rounded-2xl">
-              deposit and withdraw
+              send and recieve
             </div>
           </div>
         </div>
@@ -321,7 +334,9 @@ const HomePage = () => {
             <div className=" font-bold text-2xl lg:text-4xl text-center ">
               The future of money starts with you.
             </div>
-            <div className="text-center">Always connected. Always in control. MoonPay.</div>
+            <div className="text-center">
+              Always connected. Always in control. MoonPay.
+            </div>
             <div className="bg-white text-black rounded-2xl px-3 py-3 capitalize font-medium">
               download the app
             </div>
@@ -335,7 +350,9 @@ const HomePage = () => {
       />
       <section className="box py-20">
         <div className="flex flex-col gap-3">
-          <h5 className="text-5xl overflow-y-hidden">See what our customers say</h5>
+          <h5 className="text-5xl overflow-y-hidden">
+            See what our customers say
+          </h5>
           <Link
             to="https://www.trustpilot.com/review/moonpay.com"
             className="border border-black w-[250px] gap-1 p-1 rounded-md flex items-center"
@@ -360,45 +377,21 @@ const HomePage = () => {
         </div>
       </section>
 
-     
-      
-         <section className="flex flex-col items-center">
-          <div className=" w-[1200px] flex justify-between gap-4  slideright">
+      <section className="flex flex-col items-center">
+        <div className=" w-[1200px] flex justify-between gap-4  slideright">
           <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
-            </div>
-            <div className="">
-              It’s an easy platform to purchase crypto and send directly to my
-              different wallets. One path to minimise fees instead of multiple
-              wallet transfers requiring fees every time.
-            </div>
-            <div>Stuart Graham</div>
-          </div>
-         
-             <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -408,19 +401,19 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -430,19 +423,19 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -451,45 +444,44 @@ const HomePage = () => {
             </div>
             <div>Stuart Graham</div>
           </div>
-          
+
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
+            </div>
+            <div className="">
+              It’s an easy platform to purchase crypto and send directly to my
+              different wallets. One path to minimise fees instead of multiple
+              wallet transfers requiring fees every time.
+            </div>
+            <div>Stuart Graham</div>
+          </div>
         </div>
-       
+
         <div className=" mt-4 w-[1200px] flex justify-between gap-4  slideleft">
           <div className="   bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
-            </div>
-            <div className="">
-              It’s an easy platform to purchase crypto and send directly to my
-              different wallets. One path to minimise fees instead of multiple
-              wallet transfers requiring fees every time.
-            </div>
-            <div>Stuart Graham</div>
-          </div>
-         
-             <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -499,19 +491,19 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -521,19 +513,19 @@ const HomePage = () => {
             <div>Stuart Graham</div>
           </div>
 
-              <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
-           <div className="flex justify-between gap-2 items-center">
-             <div className="ratingStar">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-            <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
-              <IoCheckmarkCircle />
-              <span>verified review</span>
-            </div>
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
             </div>
             <div className="">
               It’s an easy platform to purchase crypto and send directly to my
@@ -542,10 +534,79 @@ const HomePage = () => {
             </div>
             <div>Stuart Graham</div>
           </div>
-          
+
+          <div className=" bg-[#f9f8fb] flex flex-col  gap-3 rounded-2xl p-4 ">
+            <div className="flex justify-between gap-2 items-center">
+              <div className="ratingStar">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+              <div className="capitalize border border-black p-2 rounded-lg flex items-center gap-1 ">
+                <IoCheckmarkCircle />
+                <span>verified review</span>
+              </div>
+            </div>
+            <div className="">
+              It’s an easy platform to purchase crypto and send directly to my
+              different wallets. One path to minimise fees instead of multiple
+              wallet transfers requiring fees every time.
+            </div>
+            <div>Stuart Graham</div>
+          </div>
         </div>
-         </section>
-      
+      </section>
+      <section className=" mt-20 py-20  homeLastSecBG h-[800px] overflow-auto"  >
+        <div className="bg-white w-[80%] lg:w-[70%] h-full lg:h-full mx-auto p-10 rounded-3xl flex flex-col items-center gap-10">
+          <div className="flex gap-2">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 lg:border-r px-4">
+                <img src="/images/download.png" alt="" className="h-7" />
+                <span className="flex text-[20px] lg:text-sm capitalize">
+                  <FaStar />
+                  <span> 4.4 on apple store</span>
+                </span>
+              </div>
+              <div className="hidden lg:flex items-center gap-2  ">
+                <img src="/images/download (1).png" alt="" className="h-7" />
+                <span className="flex items-center text-[20px] lg:text-sm  capitalize">
+                  <FaStar />
+                  <span> 4.5 on google play</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <h4 className="text-2xl lg:text-5xl text-center py-10">
+            {" "}
+            The future of money starts with you
+          </h4>
+          <div className="bg-black w-[80%] h-[150px] lg:h-[280px] lg:w-[400px] overflow-hidden  rounded-lg QRanim flex items-center justify-end relative p-2 text-white">
+            <div className="absolute text-[7px] lg:text-[15px]  text-white left-4 w-[30%] font-bold">
+              Download the MoonPay App
+            </div>
+            <img
+              src="https://payload-marketing.moonpay.com/api/media/file/app-download-qr-code.svg"
+              alt=""
+              className="rounded-lg absolute w-[100px] lg:w-[250px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className={fixedCont?"fixed bottom-0 right-0 flex justify-end":"hidden"}>
+        <div className=" top-0 bg-black h-[280px] w-[400px] overflow-hidden  rounded-lg QRanim flex items-center justify-end relative p-2 text-white">
+          <div className="absolute text-white left-4 w-[30%] font-bold">
+            Download the MoonPay App
+          </div>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/app-download-qr-code.svg"
+            alt=""
+            className="rounded-lg absolute"
+          />
+        </div>
+      </section>
     </div>
   );
 };

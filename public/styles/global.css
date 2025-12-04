@@ -5,13 +5,12 @@
   src: local("Sohn") url("../fonts/TestSohne-BuchKursiv-BF663d89cd3e887.otf")
     format("opentype");
 }
-a{
-  @apply font-bold cursor-pointer
+a {
+  @apply font-bold cursor-pointer;
 }
 
-
-h2{
-  @apply text-xl
+h2 {
+  @apply text-xl;
 }
 h1,
 h2,
@@ -19,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-@apply font-bold overflow-y-hidden
+  @apply font-bold overflow-y-hidden;
 }
 
 * {
@@ -34,109 +33,164 @@ body {
 .box {
   @apply max-w-[85%] lg:max-w-[1000px] mx-auto;
 }
-.Animwrapper{
+.Animwrapper {
   width: 100%;
   overflow-x: hidden;
 }
-.innerwrapper{
+.innerwrapper {
   animation: moveLeft 5s linear infinite;
 }
-@keyframes moveLeft{
-from{transform:translateX(0%)}
-to{transform:translateX(-10%)}
+@keyframes moveLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-10%);
+  }
 }
-.rotate{
-  animation: roll 1s 1
+.rotate {
+  animation: roll 1s 1;
 }
 @keyframes roll {
-  from{
+  from {
     transform: rotate(0deg);
-  } to{
+  }
+  to {
     transform: rotate(180deg);
   }
 }
-.primaryBtn{
-  @apply w-full lg:w-[50%]  mx-auto lg:mx-0 bg-black text-white px-6 py-2 lg:py-6 flex items-center justify-center rounded-full text-sm
+.homeLastSecBG {
+  background-image: linear-gradient(to top, #9b53df, #dac6fd);
+  animation: changebg 3s infinite;
 }
-.ratingStar{
-  @apply flex gap-1 text-[#10b981]
+@keyframes changebg {
+  0% {
+    background-image: linear-gradient(45deg, #9b53df, #dac6fd);
+  }
+  50% {
+    background-image: linear-gradient(45deg, #9b53df, #dac6fd);
+  }
+  100% {
+    background-image: linear-gradient(45deg, #9b53df, #f77a44, #ebddea);
+  }
 }
-.slideright{
+
+.QRanim {
+  animation: increaseWidth 4s 3 20s;
+}
+@keyframes increaseWidth {
+  0% {
+    width: 400px;
+  }
+  50% { 
+    width: 280px;
+   
+  }
+  100% {
+    width: 400px;
+  }
+}
+.primaryBtn {
+  @apply w-full lg:w-[50%]  mx-auto lg:mx-0 bg-black text-white px-6 py-2 lg:py-6 flex items-center justify-center rounded-full text-sm;
+}
+.ratingStar {
+  @apply flex gap-1 text-[#10b981];
+}
+.slideright {
   animation: slideright 100s infinite;
 }
 @keyframes slideright {
- from{ transform:translateX(50%)}
- to{ transform:translateX(-100%)}
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-
-.slideleft{
+.slideleft {
   animation: slideleft 100s infinite;
 }
 @keyframes slideleft {
- from{ transform:translateX(-50%)}
- to{ transform:translateX(100%)}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
-.businessCardBG{
-  background-image: linear-gradient(to top,#b273fe,#EFE0FF );
+.businessCardBG {
+  background-image: linear-gradient(to top, #b273fe, #efe0ff);
 }
-.businessCard2Bg{
-  background-image: linear-gradient(to top,#220249 ,#5a2b93,#25096b);
+.businessCard2Bg {
+  background-image: linear-gradient(to top, #220249, #5a2b93, #25096b);
 }
-.businessCard3Bg{
-  background-image: linear-gradient(to top,#fff ,#b273fe);
+.businessCard3Bg {
+  background-image: linear-gradient(to top, #fff, #b273fe);
 }
-.cardanim1{
- animation: show1 5s 2s infinite ;
+.cardanim1 {
+  animation: show1 5s 2s infinite;
 }
-.cardanim2{
-  animation:show2 5.5s infinite
+.cardanim2 {
+  animation: show2 5.5s infinite;
 }
 @keyframes show1 {
-  0%{
+  0% {
     transform: translateY(200px);
-    
   }
-  50%{
+  50% {
     transform: translate(0px);
   }
-  100%{
+  100% {
     transform: translateY(200px);
   }
-}@keyframes show2 {
-  0%{
+}
+@keyframes show2 {
+  0% {
     transform: translateY(200px);
-    
   }
-  50%{
-        transform: translate(0px);
+  50% {
+    transform: translate(0px);
   }
-  100%{
+  100% {
     transform: translateY(0px);
   }
 }
 
-.view-cardShadow{
+.view-cardShadow {
   box-shadow: 0px 10px 300px #c6afef;
 }
-.card1{
+.card1 {
   animation: moveup 5s infinite 3s;
 }
 @keyframes moveup {
-  0%{transform:translateY(0px)}
+  0% {
+    transform: translateY(0px);
+  }
 
-  50%{transform:translateY(-150px);
- }
-  100%{transform:translateY(-150px);
-   }
+  50% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-150px);
+  }
 }
-.card2{
-   animation: moveDown 5s infinite 1.5s;
+.card2 {
+  animation: moveDown 5s infinite 1.5s;
 }
 @keyframes moveDown {
-  0%{transform:translateY(0px);
- }
-  50%{transform:translateY(-150px)}
-  100%{transform:translateY(-150px);
-   }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-150px);
+  }
 }
+
+.text-bg{
+  background-image: linear-gradient(to right,#00008b,#211eff,#cf6414,#472207);
+}
+
