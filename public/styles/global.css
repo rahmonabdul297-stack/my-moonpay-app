@@ -8,6 +8,10 @@
 a {
   @apply font-bold cursor-pointer;
 }
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
 h2 {
   @apply text-xl;
@@ -21,9 +25,13 @@ h6 {
   @apply font-bold overflow-y-hidden;
 }
 
-* {
-  box-sizing: border-box;
-  overflow-x: hidden;
+
+input[type="number"]::-webkit-inner-spin-button
+ {
+    -webkit-appearance: none;
+    margin: 0; }
+input[type="number"] {
+    -moz-appearance: textfield; 
 }
 
 body {
@@ -192,5 +200,22 @@ body {
 
 .text-bg{
   background-image: linear-gradient(to right,#00008b,#211eff,#cf6414,#472207);
+}
+
+.signin_inputStyle1{
+  @apply p-3 border-none focus:border-none focus:outline-none text-[10px] px-5 w-[70%]
+}
+.signin_inputStyle1::placeholder{
+  @apply text-black
+}
+.signin_inputStyle2{
+  @apply p-3 border-none focus:border-none focus:outline-none text-[10px] px-5 text-red-500 w-[70%]
+}
+.signin_inputStyle2::placeholder{
+  @apply text-red-500
+}
+.AmountInput::placeholder{
+font-weight: bold;
+ color: black;
 }
 
