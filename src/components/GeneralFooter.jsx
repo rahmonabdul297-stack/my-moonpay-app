@@ -97,7 +97,7 @@ const GeneralFooter = () => {
             <Link to="/" className="hover:text-white">
               sell Crypto
             </Link>
-            <Link to="/" className="hover:text-white">
+            <Link to="/swap" className="hover:text-white">
               swap Crypto
             </Link>
             <Link to="/" className="hover:text-white">

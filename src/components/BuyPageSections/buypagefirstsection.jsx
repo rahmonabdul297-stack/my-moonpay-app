@@ -36,6 +36,7 @@ import { BsCopy } from "react-icons/bs";
 import { FcCancel } from "react-icons/fc";
 
 const BuyPagefirstSection = () => {
+  const [convertInterface,setconvertInterface]=useState(false)
   const [currencies, setcurrencies] = useState(false);
   const [asset, setasset] = useState(false);
   const [settings, setsettings] = useState(false);
@@ -62,6 +63,7 @@ const BuyPagefirstSection = () => {
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   const handlesubmitEmail = async () => {
+    setconvertInterface(true)
     setsubmitEmail(true);
     if (subscribe && subscribe.toString().includes("@")) {
       setwarning("");
@@ -90,6 +92,7 @@ const BuyPagefirstSection = () => {
     setsubmitEmail(false);
   };
   const handlesignininputError = () => {
+    setconvertInterface(true)
     if (signininputError === false) {
       setsignininputError(true);
     } else {
@@ -97,45 +100,54 @@ const BuyPagefirstSection = () => {
     }
   };
   const handlecurrenciesDropOpen = () => {
+    setconvertInterface(true)
     if (currencies === false) {
       setcurrencies(true);
     }
   };
   const handlecurrenciesDropclose = () => {
+    setconvertInterface(false)
     if (currencies === true) {
       setcurrencies(false);
     }
   };
 
   const handleassetDropOpen = () => {
+    setconvertInterface(true)
     if (asset === false) {
       setasset(true);
     }
   };
   const handleassetDropclose = () => {
+    setconvertInterface(false)
     if (asset === true) {
       setasset(false);
     }
   };
 
   const handlesettingsDropOpen = () => {
+    setconvertInterface(true)
     if (settings === false) {
       setsettings(true);
     }
   };
   const handlesettingsDropclose = () => {
+    setconvertInterface(false)
     if (settings === true) {
       setsettings(false);
     }
   };
 
   const handlesigninDropOpen = () => {
+    setconvertInterface(true)
     setsettings(false);
     if (signin === false) {
       setsignin(true);
     }
   };
   const handlesigninDropclose = () => {
+
+    setconvertInterface(true)
     setsettings(true);
     if (signin === true) {
       setsignin(false);
@@ -143,12 +155,14 @@ const BuyPagefirstSection = () => {
   };
 
   const handlepreferencesDropOpen = () => {
+    setconvertInterface(true)
     setsettings(false);
     if (preferences === false) {
       setpreferences(true);
     }
   };
   const handlepreferencesDropclose = () => {
+    setconvertInterface(true)
     setsettings(true);
     if (preferences === true) {
       setpreferences(false);
@@ -156,11 +170,13 @@ const BuyPagefirstSection = () => {
   };
 
   const handlereopencurrencyDropopen = () => {
+    setconvertInterface(true)
     if (reopencurrencyDrop === false) {
       setreopencurrencyDrop(true);
     }
   };
   const handlereopencurrencyDropclose = () => {
+    setconvertInterface(true)
     setpreferences(true);
     if (reopencurrencyDrop === true) {
       setreopencurrencyDrop(false);
@@ -168,36 +184,43 @@ const BuyPagefirstSection = () => {
   };
 
   const handlerethemeDropopen = () => {
+    setconvertInterface(true)
     setpreferences(false);
     if (themeDrop === false) {
       setthemeDrop(true);
     }
   };
   const handlethemeDropclose = () => {
+    setconvertInterface(true)
     setpreferences(true);
     if (themeDrop === true) {
       setthemeDrop(false);
     }
   };
   const handlethemelightmode = () => {
+    setconvertInterface(true)
     settheme(true);
   };
   const handlethemedarkmode = () => {
+    setconvertInterface(true)
     settheme(false);
   };
   const handlecookiesDropOpen = () => {
+    setconvertInterface(true)
     setpreferences(false);
     if (cookiesDrop === false) {
       setcookiesDrop(true);
     }
   };
   const handlecookiesDropClose = () => {
+    setconvertInterface(true)
     setpreferences(true);
     if (cookiesDrop === true) {
       setcookiesDrop(false);
     }
   };
   const handleallowAllcookies = () => {
+    setconvertInterface(true)
     if (allowAllcookies === false) {
       setallowAllcookies(true);
     } else {
@@ -206,12 +229,14 @@ const BuyPagefirstSection = () => {
   };
 
   const handlehelpDropopen = () => {
+    setconvertInterface(true)
     setsettings(false);
     if (helpDrop === false) {
       sethelpDrop(true);
     }
   };
   const handlehelpDropclose = () => {
+    setconvertInterface(true)
     setsettings(true);
     if (helpDrop === true) {
       sethelpDrop(false);
@@ -219,18 +244,21 @@ const BuyPagefirstSection = () => {
   };
 
   const handleDiagnosticsDropopen = () => {
+    setconvertInterface(true)
     sethelpDrop(false);
     if (DiagnosticsDrop === false) {
       setDiagnosticsDrop(true);
     }
   };
   const handleDiagnosticsDropclose = () => {
+    setconvertInterface(true)
     sethelpDrop(true);
     if (DiagnosticsDrop === true) {
       setDiagnosticsDrop(false);
     }
   };
   const handlecursor=()=>{
+    setconvertInterface(true)
     setcursor(true)
   }
  
@@ -444,7 +472,7 @@ const BuyPagefirstSection = () => {
             </div>
             </div>
 
-              <div className={settings?"hidden":"  flex flex-col gap-2 items-center  mx-auto "}> 
+              <div className={convertInterface?"hidden":"  flex flex-col gap-2 items-center  mx-auto "}> 
                 
           <div className="flex justify-end ">
           <div>

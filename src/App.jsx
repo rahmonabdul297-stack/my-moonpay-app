@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import BusinessPage from "./pages/business";
 import BusinessLayout from "./layouts/businessLayout";
 import BuycryptoPage from "./pages/buycrypto";
+import SwapcryptoPage from "./pages/swap";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
            <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
           <Route path="/buycrypto" element={<BuycryptoPage />}/>
+          <Route path="/swap" element={<SwapcryptoPage />}/>
           </Route>
          <Route element={<BusinessLayout />}>
             <Route path="/business" element={<BusinessPage />} />

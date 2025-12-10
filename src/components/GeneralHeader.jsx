@@ -229,9 +229,9 @@ const GeneralHeader = () => {
               </div>
             </div>
 
-            <div className="hover:text-[#8d8c8e]" onClick={handleswapOver}>
+            <Link to="/swap" className="hover:text-[#8d8c8e]" onClick={handleswapOver}>
               Swap
-            </div>
+            </Link>
 
             <div className={swapOver ? "z-10" : "hidden"}>
               <div className="fixed left-[300px] top-[85px] w-[200px] h-[250px] bg-[#f9f8fb] rounded-md capitalize p-4 flex flex-col gap-3">
