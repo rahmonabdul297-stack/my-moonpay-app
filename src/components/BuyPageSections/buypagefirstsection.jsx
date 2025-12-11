@@ -760,7 +760,7 @@ const BuyPagefirstSection = () => {
                   <FaAngleRight />
                 </Link>
 
-                <Link to="" className="flex items-center justify-between">
+                <Link to="/policies" target="blank" className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <MdOutlineSecurity />
                     <div className="text-sm capitalize">

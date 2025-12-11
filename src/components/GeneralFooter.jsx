@@ -9,7 +9,6 @@ import {
   successNotification,
 } from "../utils/helper";
 import { MoonLoader } from "react-spinners";
-
 const GeneralFooter = () => {
   const [submitEmail, setsubmitEmail] = useState(false);
   const [subscribe, setsubscribe] = useState();
@@ -283,16 +282,16 @@ const GeneralFooter = () => {
         <div className=" capitalize flex flex-col">
           <h2>legal</h2>
           <div className="mt-4 flex flex-col gap-3 text-[#625e56] text-sm">
-            <Link to="" className="hover:text-white">
+            <Link to="/policies" className="hover:text-white">
               licenses
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/policies" className="hover:text-white">
               privacy policy
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/policies" className="hover:text-white">
               cookie policy
             </Link>
-            <Link to="" className="hover:text-white">
+            <Link to="/policies" className="hover:text-white">
               terms of use
             </Link>
           </div>
