@@ -19,6 +19,9 @@ html {
 h2 {
   @apply text-xl;
 }
+h5{
+  @apply  text-xl  lg:text-3xl font-bold
+}
 h1,
 h2,
 h3,

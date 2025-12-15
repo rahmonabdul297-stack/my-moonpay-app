@@ -503,15 +503,15 @@ const GeneralHeader = () => {
                 <FaAngleDown />
               </div>
             </div>
-            <div>
+           
               <Link
                 to="/buycrypto"
-                className="w-full overflow-hidden text-center py-2 px-4 bg-black text-white rounded-2xl capitalize"
+                className=" w-[300px] py-1 px-3 overflow-hidden text-center mx-auto bg-black text-white rounded-2xl capitalize"
                  onClick={handlemenuDrop}
               >
                 get started
               </Link>
-            </div>
+            
           </div>
         </div>
       </div>

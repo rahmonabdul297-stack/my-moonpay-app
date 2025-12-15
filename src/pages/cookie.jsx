@@ -10,7 +10,7 @@ const CookiePage = () => {
           <FaAngleLeft />
           <Link to="/policies">Back to legal</Link>
         </div>
-        <h4 className="border-b py-12 text-6xl capitalize">Cookie Policy</h4>
+        <h4 className="border-b py-12 text-2xl lg:text-6xl capitalize">Cookie Policy</h4>
       </section>
 
       <section className="flex flex-col lg:grid grid-cols-3">

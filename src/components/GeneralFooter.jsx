@@ -8,40 +8,52 @@ import {
   infoNotification,
   successNotification,
 } from "../utils/helper";
-import { MoonLoader } from "react-spinners";
+import { CiWarning } from "react-icons/ci";
 const GeneralFooter = () => {
   const [submitEmail, setsubmitEmail] = useState(false);
   const [subscribe, setsubscribe] = useState();
+  const [check, setcheck] = useState(false);
+  const [Emailwarning, setEmailwarning] = useState("");
+  const [consentWarning, setconsentWarning] = useState("");
+  const handleChecking = () => {
+    if (check === false) {
+      setcheck(true);
+    } else {
+      setcheck(false);
+    }
+  };
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   const handlesubmitEmail = async () => {
-    setsubmitEmail(true)
-     if(subscribe.toString().includes("@")){
-       const payload = { subscribe };
+    setsubmitEmail(true);
+    if (subscribe && subscribe.toString().includes("@") && check === true) {
+      setEmailwarning("");
+      setconsentWarning("");
+      const payload = { subscribe };
       const response = await fetch(url, {
         method: "post",
-        body:JSON.stringify(payload),
+        body: JSON.stringify(payload),
       });
-       const responseData = await response.json()
-  console.log(response.status)
-      successNotification("success!")
-    console.log("subscribe:",subscribe)
-      console.log("responseData:", responseData);
-  
-    if (response.status.toString().includes("20")) {
+      const responseData = await response.json();
+      console.log(response.status);
       successNotification("success!");
-    } else {
-      errorNotification("something when wrong!");
-    }
-     }else{
-      infoNotification("@ must be included!")
-     }
- ;
-  
-    setsubmitEmail(false);
-  }
-  
+      console.log("subscribe:", subscribe);
+      console.log("responseData:", responseData);
 
+      if (response.status.toString().includes("20")) {
+        successNotification("success!");
+      } else {
+        errorNotification("something when wrong!");
+      }
+    } else if (subscribe && check === false) {
+      setconsentWarning("Consent required");
+    } else {
+      infoNotification("check your email and try again!");
+      setEmailwarning("Email required");
+      setconsentWarning("Consent required");
+    }
+    setsubmitEmail(false);
+  };
 
   return (
     <div className="bg-black py-16">
@@ -72,21 +84,26 @@ const GeneralFooter = () => {
             onChange={(e) => setsubscribe(e.target.value)}
           />
           <div
-            className="bg-[#222] px-4 py-2 rounded-xl"
-            onClick={submitEmail ? null:handlesubmitEmail}
+            className="bg-[#222] px-4 py-2 rounded-xl w-max"
+            onClick={submitEmail ? null : handlesubmitEmail}
           >
-            {submitEmail ? <MoonLoader size={10} color="#fff"/> : "subscribe"}
+            {submitEmail ? "submitting..." : "subscribe"}
           </div>
         </div>
+         <div className="text-red-500 px-10">{Emailwarning}</div>
         <div className="flex lg:hidden items-start gap-2">
-          <input type="checkbox" className="bg-[#222]" />
+          <input
+            type="checkbox"
+            className="bg-[#222] w-[100px]"
+            onClick={handleChecking}
+          />
           <p className="text-[#625e56]">
             Check this box to receive communications from MoonPay. You can
             unsubscribe at any time. We look after your data - see our privacy
             policy.
           </p>
         </div>
-
+       <div className="text-red-600 px-10">{consentWarning}</div>
         <div className=" capitalize flex flex-col ">
           <h2>personal</h2>
           <div className="mt-4 flex flex-col  gap-3 text-[#625e56] text-sm">
@@ -327,21 +344,28 @@ const GeneralFooter = () => {
                 onChange={(e) => setsubscribe(e.target.value)}
               />
               <div
-                className="bg-[#222] text-center py-2 px-4 rounded-xl"
+                className="bg-[#222] flex items-center justify-center rounded-xl w-[200px]"
                 onClick={handlesubmitEmail}
               >
                 {submitEmail ? "submitting..." : "subscribe"}
               </div>
             </div>
             <div>
+              <div className="text-red-600 px-10 flex ">{Emailwarning}</div>
               <div className="hidden lg:flex items-start gap-2">
-                <input type="checkbox" className="bg-[#222]" />
+                <input
+                  type="checkbox"
+                  className="bg-[#222]  w-[100px]"
+                  onClick={handleChecking}
+                />
+
                 <p className="text-[#625e56]">
                   Check this box to receive communications from MoonPay. You can
                   unsubscribe at any time. We look after your data - see our
                   privacy policy.
                 </p>
               </div>
+              <div className="text-red-600 px-10">{consentWarning}</div>
             </div>
           </div>
 

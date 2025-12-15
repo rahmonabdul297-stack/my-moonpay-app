@@ -498,7 +498,7 @@ export const Addresses=[
       content:""
     },
     {
-      url:"/Licenses",
+      url:"/licenses",
       title:"MoonPay Rails Licenses",
       content:""
     },

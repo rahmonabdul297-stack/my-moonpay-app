@@ -5,7 +5,7 @@ return(
     <div className="text-appAqua w-[100%] h-[100%] flex  gap-3 items-center justify-center overflow-hidden">
         <ClipLoader  
         size={20}
-        color="#00008b"
+        color="#fff"
         aria-label="loading spinner"
         data-testid="loader"
         />

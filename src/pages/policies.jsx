@@ -44,7 +44,7 @@ const PolicyPage = () => {
 
         <div className=" flex flex-col lg:flex-row flex-wrap gap-2 ">
             {policyCardArr.map((card)=>(
-   <div className="w-[250px]  bg-[#f9f8f5] rounded-lg flex flex-col gap-14 pt-10 p-4 ">
+   <div className="lg:w-[250px]  bg-[#f9f8f5] rounded-lg flex flex-col gap-14 pt-10 p-4 ">
            <div className="flex flex-col gap-7">
              <FaCopy />
             <h4 className="text-xl">{card.title}</h4>

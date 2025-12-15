@@ -36,7 +36,7 @@ import { BsCopy } from "react-icons/bs";
 import { FcCancel } from "react-icons/fc";
 
 const BuyPagefirstSection = () => {
-  const [convertInterface,setconvertInterface]=useState(false)
+  const [convertInterface,setconvertInterface]=useState()
   const [currencies, setcurrencies] = useState(false);
   const [asset, setasset] = useState(false);
   const [settings, setsettings] = useState(false);
@@ -257,10 +257,7 @@ const BuyPagefirstSection = () => {
       setDiagnosticsDrop(false);
     }
   };
-  const handlecursor=()=>{
-    setconvertInterface(true)
-    setcursor(true)
-  }
+ 
  
 
   const searched = availableCoin.filter((itm) =>
@@ -415,7 +412,7 @@ const BuyPagefirstSection = () => {
 
         <div className="col-span-1 py-20 h-[400px] flex flex-col">
           <div className="flex flex-col gap-10 relative">
-            <div className="flex   gap-10">
+            <div className="flex   gap-10 mx-auto">
             <div
               className="w-max bg-[#edebe8] hover:bg-[#d4d3d1] text-xs flex items-center px-2 py-1 rounded-full uppercase"
               onClick={handlecurrenciesDropOpen}
@@ -510,14 +507,14 @@ const BuyPagefirstSection = () => {
                   ? availableCoin
                       .filter((coin) => coin.id === availableCoinAbr)
                       .map((coin) => (
-                         <div key={coin.id} className="flex justify-center gap-2 bg-[#7d00ff] text-[#ae60ff] py-1 px-3 rounded-4xl w-[300px]">
+                         <div key={coin.id} className="flex justify-center gap-2 bg-[#7d00ff] text-[#ae60ff] py-1 px-3 rounded-4xl w-[250px]">
                             {"continue with"+" "+coin.name}
                         </div>
                       ))
                   : availableCoin
                       .filter((coin) => coin.id === 1)
                       .map((coin) => (
-                        <div key={coin.id} className="flex justify-center gap-2 bg-[#7d00ff] text-[#ae60ff] py-1 px-3 rounded-4xl w-[300px]" onMouseOver={handlecursor}>
+                        <div key={coin.id} className="flex justify-center gap-2 bg-[#7d00ff] text-[#ae60ff] py-1 px-3 rounded-4xl w-[250px]" >
                             {"continue with"+" "+coin.name}
                         </div>
                       ))}
@@ -760,7 +757,7 @@ const BuyPagefirstSection = () => {
                   <FaAngleRight />
                 </Link>
 
-                <Link to="/policies" target="blank" className="flex items-center justify-between">
+                <Link to="/policies"  className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <MdOutlineSecurity />
                     <div className="text-sm capitalize">

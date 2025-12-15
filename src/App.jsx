@@ -9,6 +9,7 @@ import BuycryptoPage from "./pages/buycrypto";
 import SwapcryptoPage from "./pages/swap";
 import PolicyPage from "./pages/policies";
 import CookiePage from "./pages/cookie";
+import LicensesPage from "./pages/licenses";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/swap" element={<SwapcryptoPage />}/>
           <Route path="/policies" element={<PolicyPage />}/>
           <Route path="/cookie" element={<CookiePage />}/>
+            <Route path="/licenses" element={<LicensesPage />}/>
           </Route>
          <Route element={<BusinessLayout />}>
             <Route path="/business" element={<BusinessPage />} />
