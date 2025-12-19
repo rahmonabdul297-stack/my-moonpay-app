@@ -58,7 +58,7 @@ const HomePage = () => {
             Your universal account to buy, sell, trade and pay with crypto.
           </p>
           <div className="flex justify-between items-center gap-5">
-            <Link to="" className="primaryBtn">
+            <Link to="/buycrypto" className="primaryBtn">
               Buy crypto
             </Link>
 
@@ -148,9 +148,9 @@ const HomePage = () => {
             MoonPay keeps it simple. You hold the keys - we are non-custodial,
             so your crypto always stays in your control.
           </div>
-          <div className="bg-white w-[50%] lg:w-[20%] text-black capitalize font-bold text-center px-2 py-3 lg:py-6 rounded-4xl ">
+          <Link to="/buycrypto" className="bg-white w-[50%] lg:w-[20%] text-black capitalize font-bold text-center px-2 py-3 lg:py-6 rounded-4xl hover:bg-[#d8c8ff] hover:duration-1000">
             buy crypto
-          </div>
+          </Link>
         </div>
       </div>
       <section className="box text-black mt-[200px] flex flex-col items-center lg:flex-row justify-between gap-20">
@@ -596,14 +596,14 @@ const HomePage = () => {
       </section>
 
       <section className={fixedCont?"fixed bottom-0 right-0 flex justify-end":"hidden"}>
-        <div className=" top-0 bg-black h-[280px] w-[400px] overflow-hidden  rounded-lg QRanim flex items-center justify-end relative p-2 text-white">
-          <div className="absolute text-white left-4 w-[30%] font-bold">
+        <div className=" top-0 bg-black h-[150px] w-[300px] overflow-hidden  rounded-lg QRanim  flex items-center justify-end relative p-4 text-white">
+          <div className="absolute text-[10px] text-white left-4 w-[30%] font-bold">
             Download the MoonPay App
           </div>
           <img
             src="https://payload-marketing.moonpay.com/api/media/file/app-download-qr-code.svg"
             alt=""
-            className="rounded-lg absolute"
+            className="rounded-lg h-[80%] absolute"
           />
         </div>
       </section>

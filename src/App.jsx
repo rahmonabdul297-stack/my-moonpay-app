@@ -10,6 +10,8 @@ import SwapcryptoPage from "./pages/swap";
 import PolicyPage from "./pages/policies";
 import CookiePage from "./pages/cookie";
 import LicensesPage from "./pages/licenses";
+import SignUpPage from "./pages/signup";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           pauseOnHover
         />
         <Routes>
+          <Route path="/signup" element={<SignUpPage />}/>
+          <Route path="/login" element={<Login />}/>
           <Route element={<GeneralLayout />}>
            <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />

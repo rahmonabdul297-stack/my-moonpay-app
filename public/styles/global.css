@@ -228,3 +228,29 @@ body {
   font-weight: bold;
   color: black;
 }
+.signupWelcomCard{
+  background-image: linear-gradient(to top,#992af7,#c06bf4,#cea5ef);
+  height: 600px;
+  width: 600px;
+  border-radius: 50px;
+  padding: 50px;
+  color: white;
+
+}
+.signUpCont input{
+@apply border-2 border-[#aaa] outline-0  px-2 py-1 rounded-lg
+}
+.signUpCont input::placeholder{
+  @apply text-[#aaa]
+}
+
+.signUpCont select{
+  @apply  p-2 border-2 border-[#aaa] capitalize outline-0 rounded-lg
+}
+
+.signUpCont select option{
+  @apply  capitalize
+}
+
+
+  

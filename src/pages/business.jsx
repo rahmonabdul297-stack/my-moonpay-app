@@ -152,7 +152,7 @@ const YourComponent = () => {
     },
   ];
 
-  const [BtcReview, setBtcReview] = useState(false);
+  const [BtcReview, setBtcReview] = useState(0);
   const [oncrampinCrypto, setoncrampinCrypto] = useState(false);
   const [cryptoFait, setcryptoFait] = useState(false);
   const [Oncrampsexample, setOncrampsexample] = useState(false);
@@ -188,15 +188,7 @@ const YourComponent = () => {
       sethowToselectOncramp(false);
     }
   };
-  const HandleBtcReview = () => {
-    if (BtcReview === false) {
-      setBtcReview(true);
-    } else if (BtcReview === true) {
-      setBtcReview(false);
-    } else {
-      setBtcReview();
-    }
-  };
+
   return (
     <div className="w-full py-32">
       <section className="pl-12 flex flex-col lg:flex-row justify-between gap-4">
@@ -668,16 +660,14 @@ const YourComponent = () => {
         </div>
 
         {/* testimonials section */}
-        <div className="flex flex-col gap-10 py-20">
-          {BtcReview
-            ? testimonialArr
-                .filter((item) => item.id === 1)
-                .map((item) => {
-                  return (
-                    <div
-                      className="flex flex-col lg:flex-row justify-between gap-6"
-                      key={item.id}
-                    >
+
+        {BtcReview
+          ? testimonialArr
+              .filter((item) => item.id === BtcReview)
+              .map((item) => {
+                return (
+                  <div className="flex flex-col gap-10 py-20" key={item.id}>
+                    <div className="flex flex-col lg:flex-row justify-between gap-6">
                       <img src={item.img} alt="" />
                       <div className="flex flex-col gap-10">
                         <h4 className="font-bold text-2xl">
@@ -698,16 +688,70 @@ const YourComponent = () => {
                         </div>
                       </div>
                     </div>
-                  );
-                })
-            : testimonialArr
-                .filter((item) => item.id === 2)
-                .map((item) => {
-                  return (
-                    <div
-                      className="flex flex-col lg:flex-row  justify-between gap-6"
-                      key={item.id}
-                    >
+
+                    <div className="flex items-center justify-center">
+                      <GoDotFill
+                        className={
+                          BtcReview === 1 ? "text-black" : "text-gray-300"
+                        }
+                        onClick={() => setBtcReview(1)}
+                      />
+                      <GoDotFill
+                        className={
+                          BtcReview === 2 ? "text-black" : "text-gray-300"
+                        }
+                        onClick={() => setBtcReview(2)}
+                      />
+                      <GoDotFill
+                        className={
+                          BtcReview === 3 ? "text-black" : "text-gray-300"
+                        }
+                        onClick={() => setBtcReview(3)}
+                      />
+                    </div>
+                    <div className=" flex justify-center gap-10">
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5  rounded-lg"
+                        onClick={() => setBtcReview(1)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/Bitcoin%20new%20logo.png"
+                          alt=""
+                          className="h-5"
+                        />
+                      </div>
+
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5 rounded-lg"
+                        onClick={() => setBtcReview(2)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/8fac5adfqf-Y6D4HOiF6re0FEM7sZuuv"
+                          alt=""
+                          className="h-5"
+                        />
+                      </div>
+
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5 rounded-lg"
+                        onClick={() => setBtcReview(3)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/aoql1wo1ox-33LUOrOCd682V1oM061yWG"
+                          alt=""
+                          className="h-5"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+          : testimonialArr
+              .filter((item) => item.id === 1)
+              .map((item) => {
+                return (
+                  <div className="flex flex-col gap-10 py-20" key={item.id}>
+                    <div className="flex flex-col lg:flex-row  justify-between gap-6">
                       <img src={item.img} alt="" />
                       <div className="flex flex-col gap-10">
                         <h4 className="font-bold text-2xl">
@@ -728,72 +772,65 @@ const YourComponent = () => {
                         </div>
                       </div>
                     </div>
-                  );
-                })
-            ? testimonialArr
-                .filter((item) => item.id === 3)
-                .map((item) => {
-                  return (
-                    <div
-                      className="flex flex-col lg:flex-row  justify-between gap-6"
-                      key={item.id}
-                    >
-                      <img src={item.img} alt="" />
-                      <div className="flex flex-col gap-10">
-                        <h4 className="font-bold text-2xl">
-                          {item.reviewsTitle}
-                        </h4>
-                        <div>{item.reviews}</div>
 
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={item.userImg}
-                            alt=""
-                            className="h-10 rounded-[50%]"
-                          />
-                          <div>
-                            <div>{item.userName}</div>
-                            <div>{item.website}</div>
-                          </div>
-                        </div>
+                    <div className="flex items-center justify-center">
+                      <GoDotFill
+                        className={
+                          BtcReview === 1 ? "text-black" : "text-black"
+                        }
+                        onClick={() => setBtcReview(1)}
+                      />
+                      <GoDotFill
+                        className={
+                          BtcReview === 2 ? "text-black" : "text-gray-300"
+                        }
+                        onClick={() => setBtcReview(2)}
+                      />
+                      <GoDotFill
+                        className={
+                          BtcReview === 3 ? "text-black" : "text-gray-300"
+                        }
+                        onClick={() => setBtcReview(3)}
+                      />
+                    </div>
+
+                    <div className=" flex justify-center gap-10">
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5  rounded-lg"
+                        onClick={() => setBtcReview(1)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/Bitcoin%20new%20logo.png"
+                          alt=""
+                          className="h-5"
+                        />
+                      </div>
+
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5 rounded-lg"
+                        onClick={() => setBtcReview(2)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/8fac5adfqf-Y6D4HOiF6re0FEM7sZuuv"
+                          alt=""
+                          className="h-5"
+                        />
+                      </div>
+
+                      <div
+                        className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5 rounded-lg"
+                        onClick={() => setBtcReview(3)}
+                      >
+                        <img
+                          src="https://payload-marketing.moonpay.com/api/media/file/aoql1wo1ox-33LUOrOCd682V1oM061yWG"
+                          alt=""
+                          className="h-5"
+                        />
                       </div>
                     </div>
-                  );
-                })
-            : null}
-        </div>
-
-        <div className=" flex justify-center gap-10">
-          <div
-            className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5  rounded-lg"
-            onClick={HandleBtcReview}
-          >
-            <img
-              src="https://payload-marketing.moonpay.com/api/media/file/Bitcoin%20new%20logo.png"
-              alt=""
-              className="h-5"
-            />
-          </div>
-
-          <div className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5  rounded-lg hover:border-2border-[#7d00ff]">
-            <img
-              src="https://payload-marketing.moonpay.com/api/media/file/8fac5adfqf-Y6D4HOiF6re0FEM7sZuuv"
-              alt=""
-              className="h-5"
-            />
-          </div>
-
-          <div
-            className="bg-[#eff3f9] flex items-center justify-center w-[30%] px-2 lg:px-5 py-2 lg:py-5 rounded-lg"
-            onClick={HandleBtcReview}
-          >
-            <img
-              src="https://payload-marketing.moonpay.com/api/media/file/aoql1wo1ox-33LUOrOCd682V1oM061yWG"
-              alt=""
-              className="h-5"
-            />
-          </div>
-        </div>
+                  </div>
+                );
+              })}
       </section>
 
       <section className="py-20">
@@ -1334,10 +1371,15 @@ const YourComponent = () => {
             />
             <h4>On-Ramp</h4>
             <div>The leading way to buy crypto.</div>
-            <Link to="/business" className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg">learn more</Link>
+            <Link
+              to="/business"
+              className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg"
+            >
+              learn more
+            </Link>
           </div>
 
-           <div className="flex flex-col items-center justify-center gap-3 bg-[#eff3f9] h-[300px] lg:w-[300px] rounded-lg p-4">
+          <div className="flex flex-col items-center justify-center gap-3 bg-[#eff3f9] h-[300px] lg:w-[300px] rounded-lg p-4">
             <img
               src="https://payload-marketing.moonpay.com/api/media/file/grrfaac3hj-2jAnGgWZwz7Sz2PbwQqqiq?w=128&q=90"
               alt=""
@@ -1345,7 +1387,9 @@ const YourComponent = () => {
             />
             <h4>swaps</h4>
             <div>Cross-chain swaps between 700 tokens.</div>
-            <div className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg">learn more</div>
+            <div className="bg-[#7d00ff] text-white px-3 py-1 rounded-lg">
+              learn more
+            </div>
           </div>
         </div>
       </section>

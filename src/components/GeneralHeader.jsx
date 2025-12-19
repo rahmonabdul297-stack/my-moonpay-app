@@ -158,7 +158,7 @@ const GeneralHeader = () => {
           </div>
 
           <div className="ml-5 flex gap-4 items-center font-semibold ">
-            <div className="hover:text-[#8d8c8e]" onClick={handlebuyOver}>
+            <div className="hover:text-[#8d8c8e]" onMouseOver={handlebuyOver}>
               Buy
             </div>
             <div className={buyOver ? "" : "hidden"}>
@@ -172,7 +172,7 @@ const GeneralHeader = () => {
               <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
                 {availableCoin.map((item, id) => {
                   return (
-                    <div
+                    <Link to="/buycrypto"
                       className="flex gap-3 items-center rounded-md capitalize p-4"
                       key={id}
                     >
@@ -188,12 +188,12 @@ const GeneralHeader = () => {
                           {item.abbr}
                         </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
             </div>
-            <div className="hover:text-[#8d8c8e]" onClick={handlesellOver}>
+            <div className="hover:text-[#8d8c8e]" onMouseOver={handlesellOver}>
               Sell
             </div>
             <div className={sellOver ? "z-10" : "hidden"}>
@@ -207,7 +207,7 @@ const GeneralHeader = () => {
               <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
                 {availableCoin.map((item, id) => {
                   return (
-                    <div
+                    <Link to="/swap"
                       className="flex gap-3 items-center rounded-md capitalize p-4"
                       key={id}
                     >
@@ -223,13 +223,13 @@ const GeneralHeader = () => {
                           {item.abbr}
                         </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
             </div>
 
-            <Link to="/swap" className="hover:text-[#8d8c8e]" onClick={handleswapOver}>
+            <Link to="/swap" className="hover:text-[#8d8c8e]" onMouseOver={handleswapOver}>
               Swap
             </Link>
 
@@ -244,7 +244,7 @@ const GeneralHeader = () => {
               <div className="fixed left-[510px] top-[85px] w-[400px] h-[250px] bg-[#f9f8fb] rounded-md flex flex-wrap">
                 {availableCoin.map((item, id) => {
                   return (
-                    <div
+                    <Link to="/swap"
                       className="flex gap-3 items-center rounded-md capitalize p-4"
                       key={id}
                     >
@@ -260,7 +260,7 @@ const GeneralHeader = () => {
                           {item.abbr}
                         </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
@@ -293,7 +293,7 @@ const GeneralHeader = () => {
             </div>
           </div>
           <Link
-            to="/buycrypto"
+            to="/signup"
             className="py-2 px-4 bg-black text-white rounded-2xl capitalize"
           >
             get started
@@ -505,7 +505,7 @@ const GeneralHeader = () => {
             </div>
            
               <Link
-                to="/buycrypto"
+                to="/signup"
                 className=" w-[300px] py-1 px-3 overflow-hidden text-center mx-auto bg-black text-white rounded-2xl capitalize"
                  onClick={handlemenuDrop}
               >

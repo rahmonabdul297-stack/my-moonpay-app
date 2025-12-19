@@ -1,16 +1,11 @@
 import {
-  FaAngleDown,
-  FaAngleLeft,
-  FaAngleRight,
   FaMinus,
   FaPlus,
   FaStar,
 } from "react-icons/fa";
 import {
-  IoIosInformationCircleOutline,
   IoMdArrowDropdown,
   IoMdArrowDropup,
-  IoMdSettings,
 } from "react-icons/io";
 import { useState } from "react";
 import { BiGridHorizontal } from "react-icons/bi";
@@ -25,6 +20,7 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 import { MdArrowOutward,  } from "react-icons/md";
 import BuyPagefirstSection from "../components/BuyPageSections/buypagefirstsection";
 import { availableCoin } from "../components/arrays/arrays";
+import QrCode from "../components/BuyPageSections/qrcode";
 
 const BuycryptoPage = () => {
  
@@ -495,24 +491,7 @@ const BuycryptoPage = () => {
         </div>
       </section>
    {/* eleventh section */}
-      <section
-        className={
-          getApp
-            ? "px-20 py-10 w-screen bg-white/20 backdrop-blur-sm fixed left-0 top-0 z-30 h-[100vh] flex items-center justify-center"
-            : "hidden"
-        }
-        onClick={handlegetAppClosing}
-      >
-        <div className="h-[400px] w-[400px] bg-black p-7 rounded-3xl flex flex-col item-center justify-center gap-4">
-          <h4 className="text-white text-3xl capitalize font-bold py-4">
-            get the moonpay app
-          </h4>
-          <img src="https://www.moonpay.com/app-download-qr-code.svg" alt="" />
-          <div className="text-[#cdbdaf] py-3 overflow-hidden text-center">
-            scan the QR code to download the app
-          </div>
-        </div>
-      </section>
+      <QrCode handlegetAppClosing={handlegetAppClosing} getApp={getApp} />
          {/* twelveth section */}
       <section className="box py-20">
         <div className="flex flex-col gap-3">
