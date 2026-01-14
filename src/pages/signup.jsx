@@ -251,7 +251,7 @@ const SignUpPage = () => {
                 <Link className="text-[#992af7]">terms and conditions.</Link>
               </div>
             </div>
-            <div
+            <Link to={submitEmail?"/buycrypto":""}
               className={
                 submitEmail
                   ? "bg-[#992af7]/50 text-center py-2 w-[90%] m-auto rounded-lg capitalize text-[#ddd]"
@@ -260,7 +260,7 @@ const SignUpPage = () => {
               onClick={submitEmail ? null : handlesubmitEmail}
             >
               {submitEmail ? "verifying..." : "create account"}
-            </div>
+            </Link>
             <div
               className={
                 changeBG

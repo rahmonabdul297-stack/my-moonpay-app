@@ -22,32 +22,13 @@ import { WiMoonAltNew } from "react-icons/wi";
 import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { IoCheckmarkCircle } from "react-icons/io5";
-import { MdArrowOutward,  } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import { availableCoin } from "../components/arrays/arrays";
 import SwapPagefirstSection from "../components/swappagesections/swapPagefirstsection";
 
 const SwapcryptoPage = () => {
- 
-
-  
-
   const [seemore, setseemore] = useState(false);
-  const handleseeMore = () => {
-    if (seemore === false) {
-      setseemore(true);
-    } else {
-      setseemore(false);
-    }
-  };
   const [getApp, setgetApp] = useState(false);
-  const handlegetAppOpening = () => {
-    if (getApp === false) {
-      setgetApp(true);
-    }
-  };
-  const handlegetAppClosing = () => {
-    setgetApp(false);
-  };
   const [firstCard, setfirstCard] = useState(false);
   const [secondCard, setsecondCard] = useState(false);
   const [thirdCard, setthirdCard] = useState(false);
@@ -56,107 +37,48 @@ const SwapcryptoPage = () => {
   const [sixthCard, setsixthCard] = useState(false);
   const [seventhCard, setseventhCard] = useState(false);
   const [eighthCard, seteighthCard] = useState(false);
-  const [ninthCard,setninthCard]=useState(false);
-
-  // event handlers
-  const handlefirstCard = () => {
-    if (firstCard === false) {
-      setfirstCard(true);
-    } else {
-      setfirstCard(false);
-    }
-  };
-
-  const handlesecondCard = () => {
-    if (secondCard === false) {
-      setsecondCard(true);
-    } else {
-      setsecondCard(false);
-    }
-  };
-
-  const handlethirdCard = () => {
-    if (thirdCard === false) {
-      setthirdCard(true);
-    } else {
-      setthirdCard(false);
-    }
-  };
-
-  const handlefourthCard = () => {
-    if (fourthCard === false) {
-      setfourthCard(true);
-    } else {
-      setfourthCard(false);
-    }
-  };
-
-  const handlefifthCard = () => {
-    if (fifthCard === false) {
-      setfifthCard(true);
-    } else {
-      setfifthCard(false);
-    }
-  };
-
-  const handlesixthCard = () => {
-    if (sixthCard === false) {
-      setsixthCard(true);
-    } else {
-      setsixthCard(false);
-    }
-  };
-
-  const handleseventhCard = () => {
-    if (seventhCard === false) {
-      setseventhCard(true);
-    } else {
-      setseventhCard(false);
-    }
-  };
-
-  const handleeighthCard = () => {
-    if (eighthCard === false) {
-      seteighthCard(true);
-    } else {
-      seteighthCard(false);
-    }
-  };
-
-  const handleninthCard=()=>{
-    if(ninthCard===false){
- setninthCard(true)
-    }else{
-        setninthCard(false)
-    }
-   
-  }
+  const [ninthCard, setninthCard] = useState(false);
 
   return (
     <div>
       {/* first section */}
-     <SwapPagefirstSection />
-   {/* second section */}
+      <SwapPagefirstSection />
+      {/* second section */}
       <section className="border-t border-b py-10 flex flex-col items-center gap-3">
         <div className="font-bold capitalize">payment methods</div>
         <div className="box lg:w-full flex justify-between gap-18">
-          <img src="https://payload-marketing.moonpay.com/api/media/file/google-pay.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/google-pay.png"
+            alt=""
+          />
 
-           <img src="https://payload-marketing.moonpay.com/api/media/file/mastercard.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/mastercard.png"
+            alt=""
+          />
 
-            <img src="https://payload-marketing.moonpay.com/api/media/file/paypal-2.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/paypal-2.png"
+            alt=""
+          />
 
-             <img src="https://payload-marketing.moonpay.com/api/media/file/visa.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/visa.png"
+            alt=""
+          />
 
-              <img src="https://payload-marketing.moonpay.com/api/media/file/apple-pay.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/apple-pay.png"
+            alt=""
+          />
         </div>
       </section>
-         {/* third section */}
+      {/* third section */}
       <section className="box py-10  mt-10">
         <div>
           <h4 className="text-4xl">How to swap cryptocurrencies on MoonPay</h4>
           <div className="text-[#737576] font-normal">
-          Here's how to swap cryptocurrency cross-chain with low fees.
+            Here's how to swap cryptocurrency cross-chain with low fees.
           </div>
         </div>
 
@@ -168,7 +90,9 @@ const SwapcryptoPage = () => {
             />
             <h4>1.Connect your wallet</h4>
             <p className="text-sm">
-            Before you swap crypto, connect your wallet. MoonPay is compatible with WalletConnect and popular crypto wallets including Ledger, Trust Wallet, MetaMask, Rainbow, Uniswap, and Exodus.
+              Before you swap crypto, connect your wallet. MoonPay is compatible
+              with WalletConnect and popular crypto wallets including Ledger,
+              Trust Wallet, MetaMask, Rainbow, Uniswap, and Exodus.
             </p>
           </div>
 
@@ -180,7 +104,8 @@ const SwapcryptoPage = () => {
             />
             <h4>2. Choose a currency pair</h4>
             <p className="text-sm">
-            Choose the cryptocurrency you’d like to swap, from a wide variety of combinations. Then, enter the destination wallet address.
+              Choose the cryptocurrency you’d like to swap, from a wide variety
+              of combinations. Then, enter the destination wallet address.
             </p>
           </div>
 
@@ -190,9 +115,10 @@ const SwapcryptoPage = () => {
            "
               alt=""
             />
-            <h4>3.  Review and confirm</h4>
+            <h4>3. Review and confirm</h4>
             <p className="text-sm">
-            Review the amount, destination, exchange rate, and any fees. Then go ahead and press swap.
+              Review the amount, destination, exchange rate, and any fees. Then
+              go ahead and press swap.
             </p>
           </div>
 
@@ -204,7 +130,8 @@ const SwapcryptoPage = () => {
             />
             <h4>4.Sign and send</h4>
             <p className="text-sm">
-             In your wallet app, sign the transaction to send crypto to the MoonPay wallet address.
+              In your wallet app, sign the transaction to send crypto to the
+              MoonPay wallet address.
             </p>
           </div>
 
@@ -212,19 +139,23 @@ const SwapcryptoPage = () => {
             <img
               src="https://payload-marketing.moonpay.com/api/media/file/wait-for-crypto-swap.svg
             "
-            
               alt=""
             />
             <h4>5. Wait for your crypto swap to complete</h4>
             <p className="text-sm">
-             Crypto exchanges usually take between a few minutes and a few hours. We’ll email you as soon as it’s done and the coins are in your wallet.
+              Crypto exchanges usually take between a few minutes and a few
+              hours. We’ll email you as soon as it’s done and the coins are in
+              your wallet.
             </p>
           </div>
         </div>
       </section>
-   {/* fourth section */}
+      {/* fourth section */}
       <section className="py-20">
-       <h4 className="box mb-10 text-2xl capitalize"> Choose from dozens of swap pairs across major chains</h4>
+        <h4 className="box mb-10 text-2xl capitalize">
+          {" "}
+          Choose from dozens of swap pairs across major chains
+        </h4>
         <div className="box flex flex-wrap gap-5">
           {seemore
             ? availableCoin?.map((item, id) => (
@@ -249,13 +180,13 @@ const SwapcryptoPage = () => {
 
         <div
           className="mx-auto w-[150px] hover:bg-[#e0dede]  text-black mt-5 flex items-center justify-center gap-2 rounded-md"
-          onClick={handleseeMore}
+          onClick={() => setseemore((prev) => !prev)}
         >
           {seemore ? "show less asset" : "show all asset"}
           {seemore ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
         </div>
       </section>
-   {/* fifth section */}
+      {/* fifth section */}
       <section className="py-20">
         <img
           src="https://payload-marketing.moonpay.com/api/media/file/Swap.png"
@@ -263,13 +194,13 @@ const SwapcryptoPage = () => {
           className="rounded-4xl"
         />
       </section>
-   {/* sixth section */}
+      {/* sixth section */}
       <section className="box">
         <h4 className="text-4xl">
-         Fast, low-cost crypto exchange at your fingertips
+          Fast, low-cost crypto exchange at your fingertips
         </h4>
       </section>
-   {/* seventh section */}
+      {/* seventh section */}
       <section className="box py-10 flex flex-col lg:grid grid-rows-2 grid-cols-2 gap-2">
         <div className="bg-[#f9f8f5] row-span-1 col-span-2 flex flex-col lg:flex-row items-center justify-between gap-5 p-4 lg:p-20 rounded-md">
           <img
@@ -277,9 +208,13 @@ const SwapcryptoPage = () => {
             alt=""
           />
           <div>
-            <h4 className="font-bold capitalize">Help that’s there when you need it</h4>
+            <h4 className="font-bold capitalize">
+              Help that’s there when you need it
+            </h4>
             <div className="text-[#cdbdaf]">
-            We’re here to help 24 hours a day, 7 days a week. We also have a vast library of educational articles that demystify crypto exchanges, Bitcoin, blockchain, and more.
+              We’re here to help 24 hours a day, 7 days a week. We also have a
+              vast library of educational articles that demystify crypto
+              exchanges, Bitcoin, blockchain, and more.
             </div>
           </div>
         </div>
@@ -290,11 +225,11 @@ const SwapcryptoPage = () => {
           />
 
           <div>
-            <h4 className="font-bold capitalize">
-             Multi-wallet support
-            </h4>
+            <h4 className="font-bold capitalize">Multi-wallet support</h4>
             <div className="text-[#cdbdaf]">
-           Exchange crypto from an Ethereum wallet like MetaMask to a Bitcoin wallet like Bitcoin.com. Or swap the same asset cross-chain like USDC (ERC-20) to USDC (Polygon). It’s all there, in one platform.
+              Exchange crypto from an Ethereum wallet like MetaMask to a Bitcoin
+              wallet like Bitcoin.com. Or swap the same asset cross-chain like
+              USDC (ERC-20) to USDC (Polygon). It’s all there, in one platform.
             </div>
           </div>
         </div>
@@ -305,18 +240,16 @@ const SwapcryptoPage = () => {
           />
 
           <div>
-            <h4 className="font-bold capitalize">
-              {" "}
-          No processing fees
-            </h4>
+            <h4 className="font-bold capitalize"> No processing fees</h4>
             <div className="text-[#cdbdaf]">
-          We work closely with liquidity partners and trading platforms to swap crypto at competitive market rates with no processing fees (network fees apply).
+              We work closely with liquidity partners and trading platforms to
+              swap crypto at competitive market rates with no processing fees
+              (network fees apply).
             </div>
           </div>
         </div>
-       
       </section>
-   {/* eighth section */}
+      {/* eighth section */}
       <section className="box py-10 flex flex-col lg:grid grid-rows-4 grid-cols-4 gap-4">
         <div className="col-span-4 row-span-4 flex flex-col">
           <h4 className="text-2xl">Round-the-clock protection</h4>
@@ -381,7 +314,10 @@ const SwapcryptoPage = () => {
           <div>
             <h4>Custom-built protection, dedicated team</h4>
             <div className="text-[#cdbdaf]">
-             Our tools and processes were developed with security at their core. And our specialist security team is working constantly to make sure you’re protected from emerging threats, whenever you exchange crypto.
+              Our tools and processes were developed with security at their
+              core. And our specialist security team is working constantly to
+              make sure you’re protected from emerging threats, whenever you
+              exchange crypto.
             </div>
           </div>
         </div>
@@ -400,7 +336,7 @@ const SwapcryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* ninth section */}
+      {/* ninth section */}
       <section className="flex flex-col items-center gap-3 py-20">
         <h4 className="capitalize font-extralight">
           trusted by millions of customers
@@ -410,7 +346,7 @@ const SwapcryptoPage = () => {
           35,000,000+
         </div>
       </section>
-   {/* tenth section */}
+      {/* tenth section */}
       <section className="my-20 bg-[url('https://payload-marketing.moonpay.com/api/media/file/Get%20the%20App.png?w=1920&q=90')] bg-no-repeat bg-center bg-cover h-[500px] rounded-3xl flex flex-col items-center justify-center text-center p-20 gap-4">
         <h4 className="text-white font-bold text-3xl lg:text-6xl">
           {" "}
@@ -422,19 +358,19 @@ const SwapcryptoPage = () => {
         </div>
         <div
           className="bg-white hover:bg-[#cdbdaf] capitalize font-normal px-2 py-1 rounded-md"
-          onClick={handlegetAppOpening}
+          onClick={() => setgetApp((prev) => !prev)}
         >
           get moonpay app
         </div>
       </section>
-   {/* eleventh section */}
+      {/* eleventh section */}
       <section
         className={
           getApp
             ? "px-20 py-10 w-screen bg-white/20 backdrop-blur-sm fixed left-0 top-0 z-30 h-[100vh] flex items-center justify-center"
             : "hidden"
         }
-        onClick={handlegetAppClosing}
+        onClick={() => setgetApp((prev) => !prev)}
       >
         <div className="h-[400px] w-[400px] bg-black p-7 rounded-3xl flex flex-col item-center justify-center gap-4">
           <h4 className="text-white text-3xl capitalize font-bold py-4">
@@ -446,7 +382,7 @@ const SwapcryptoPage = () => {
           </div>
         </div>
       </section>
-         {/* twelveth section */}
+      {/* twelveth section */}
       <section className="box py-20">
         <div className="flex flex-col gap-3">
           <h5 className="text-5xl overflow-y-hidden">
@@ -475,7 +411,7 @@ const SwapcryptoPage = () => {
           </Link>
         </div>
       </section>
-         {/* thirteenth section */}
+      {/* thirteenth section */}
       <section>
         <div className=" w-[1200px] flex justify-between gap-4  slideright">
           <div className=" bg-[#eff3f9] flex flex-col  gap-3 rounded-2xl p-4 ">
@@ -657,19 +593,19 @@ const SwapcryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* fourteenth section */}
+      {/* fourteenth section */}
       <section className="box flex flex-col lg:grid grid-cols-2 gap-2 py-20">
         {/* section header */}
         <h5 className="text-2xl lg:text-4xl w-[60%] col-span-2">
-         Frequently asked questions about swapping crypto
+          Frequently asked questions about swapping crypto
         </h5>
         {/* first card */}
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefirstCard}
+            onClick={() => setfirstCard((prev) => !prev)}
           >
-          Can I swap Bitcoin on MoonPay?
+            Can I swap Bitcoin on MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {firstCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -679,7 +615,11 @@ const SwapcryptoPage = () => {
               firstCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-            You can swap Bitcoin for other cryptocurrencies on the MoonPay app, as long as you have BTC stored in your MoonPay Bitcoin wallet to exchange BTC for new tokens. We’re working actively to make Bitcoin swaps available within the MoonPay widget for mobile and desktop users as well.
+            You can swap Bitcoin for other cryptocurrencies on the MoonPay app,
+            as long as you have BTC stored in your MoonPay Bitcoin wallet to
+            exchange BTC for new tokens. We’re working actively to make Bitcoin
+            swaps available within the MoonPay widget for mobile and desktop
+            users as well.
           </div>
         </div>
 
@@ -687,9 +627,9 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col h-max gap-3">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlesecondCard}
+            onClick={() => setsecondCard((prev) => !prev)}
           >
-           What are the limits for crypto exchanges?
+            What are the limits for crypto exchanges?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {secondCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -701,8 +641,9 @@ const SwapcryptoPage = () => {
                 : "hidden"
             }
           >
-              {" "}
-            The minimum amount of crypto to swap is $65 USD. The maximum amount allowed for a single crypto exchange transaction is $100,000 USD.
+            {" "}
+            The minimum amount of crypto to swap is $65 USD. The maximum amount
+            allowed for a single crypto exchange transaction is $100,000 USD.
           </div>
         </div>
 
@@ -710,7 +651,7 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max ">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlethirdCard}
+            onClick={() => setthirdCard((prev) => !prev)}
           >
             Why am I not seeing the cryptocurrency I want to swap?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -722,7 +663,10 @@ const SwapcryptoPage = () => {
               thirdCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-         To see all available crypto trading pairs, you’ll need to connect your cryptocurrency wallet first. It’s best to use a MoonPay wallet inside the MoonPay app to unlock all crypto token options, as well as for a smoother swapping experience.
+            To see all available crypto trading pairs, you’ll need to connect
+            your cryptocurrency wallet first. It’s best to use a MoonPay wallet
+            inside the MoonPay app to unlock all crypto token options, as well
+            as for a smoother swapping experience.
           </div>
         </div>
 
@@ -730,9 +674,9 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefourthCard}
+            onClick={() => setfourthCard((prev) => !prev)}
           >
-           What are the fees for cryptocurrency exchanges?
+            What are the fees for cryptocurrency exchanges?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {fourthCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -744,7 +688,8 @@ const SwapcryptoPage = () => {
                 : "hidden"
             }
           >
-          MoonPay does not charge a processing fee to convert crypto. Users are only responsible for paying network fees.
+            MoonPay does not charge a processing fee to convert crypto. Users
+            are only responsible for paying network fees.
           </div>
         </div>
 
@@ -752,9 +697,9 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefifthCard}
+            onClick={() => setfifthCard((prev) => !prev)}
           >
-           Why do I need to send my crypto to an external wallet address?
+            Why do I need to send my crypto to an external wallet address?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {fifthCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -764,7 +709,11 @@ const SwapcryptoPage = () => {
               fifthCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-          MoonPay handles the entire crypto conversion process for you. With non-custodial swaps, users must first send cryptocurrency before receiving the new token. For safety reasons, MoonPay generates a new crypto address for each transaction. You can track the status of your swap order at any time in the MoonPay widget.
+            MoonPay handles the entire crypto conversion process for you. With
+            non-custodial swaps, users must first send cryptocurrency before
+            receiving the new token. For safety reasons, MoonPay generates a new
+            crypto address for each transaction. You can track the status of
+            your swap order at any time in the MoonPay widget.
           </div>
         </div>
 
@@ -772,7 +721,7 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlesixthCard}
+            onClick={() => setsixthCard((prev) => !prev)}
           >
             Can I exchange crypto without KYC on MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -792,9 +741,10 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handleseventhCard}
+            onClick={() => setseventhCard((prev) => !prev)}
           >
-           How long does it take to receive my cryptocurrency after initiating a swap?
+            How long does it take to receive my cryptocurrency after initiating
+            a swap?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {seventhCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -804,7 +754,10 @@ const SwapcryptoPage = () => {
               seventhCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-          Crypto exchanges usually take between a few minutes and a few hours, depending on factors including network congestion and token liquidity. If it is your first time using MoonPay, then verification will take additional time to complete.
+            Crypto exchanges usually take between a few minutes and a few hours,
+            depending on factors including network congestion and token
+            liquidity. If it is your first time using MoonPay, then verification
+            will take additional time to complete.
           </div>
         </div>
 
@@ -812,9 +765,9 @@ const SwapcryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handleeighthCard}
+            onClick={() => seteighthCard((prev) => !prev)}
           >
-         How can I contact MoonPay?
+            How can I contact MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {eighthCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -824,17 +777,21 @@ const SwapcryptoPage = () => {
               eighthCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-        You can contact our support team 24/7, or visit our Swaps Help Center for more information about crypto exchanges. You can also start a chat with MoonPay customer support. Be sure to select “Transactions” as your issue, if you are looking for assistance with a crypto exchange.
+            You can contact our support team 24/7, or visit our Swaps Help
+            Center for more information about crypto exchanges. You can also
+            start a chat with MoonPay customer support. Be sure to select
+            “Transactions” as your issue, if you are looking for assistance with
+            a crypto exchange.
           </div>
         </div>
 
         {/* ninth card */}
-       <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
+        <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handleninthCard}
+            onClick={() => setninthCard((prev) => !prev)}
           >
-        Is MoonPay a safe platform to exchange crypto?
+            Is MoonPay a safe platform to exchange crypto?
             <div className="font-light bg-white p-3 rounded-[50%]">
               {ninthCard ? <FaMinus size={10} /> : <FaPlus size={10} />}
             </div>
@@ -844,11 +801,15 @@ const SwapcryptoPage = () => {
               ninthCard ? "text-[#737373] text-sm font-medium" : "hidden"
             }
           >
-      MoonPay is used by more than 15 million users worldwide, since our founding in 2019. We are constantly improving our fiat-to-crypto on-ramp and cryptocurrency exchange features to better serve our global customers. MoonPay’s compliance and security measures aim to protect and safeguard our customers.
+            MoonPay is used by more than 15 million users worldwide, since our
+            founding in 2019. We are constantly improving our fiat-to-crypto
+            on-ramp and cryptocurrency exchange features to better serve our
+            global customers. MoonPay’s compliance and security measures aim to
+            protect and safeguard our customers.
           </div>
         </div>
       </section>
-   {/* fifteenth section */}
+      {/* fifteenth section */}
       <section className="bg-black  rounded-t-4xl py-20">
         <div className="box flex flex-col gap-10">
           <h4 className="text-white text-4xl">

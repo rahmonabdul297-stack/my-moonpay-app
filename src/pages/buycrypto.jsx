@@ -1,12 +1,5 @@
-import {
-  FaMinus,
-  FaPlus,
-  FaStar,
-} from "react-icons/fa";
-import {
-  IoMdArrowDropdown,
-  IoMdArrowDropup,
-} from "react-icons/io";
+import { FaMinus, FaPlus, FaStar } from "react-icons/fa";
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { useState } from "react";
 import { BiGridHorizontal } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
@@ -17,33 +10,16 @@ import { WiMoonAltNew } from "react-icons/wi";
 import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { IoCheckmarkCircle } from "react-icons/io5";
-import { MdArrowOutward,  } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import BuyPagefirstSection from "../components/BuyPageSections/buypagefirstsection";
 import { availableCoin } from "../components/arrays/arrays";
 import QrCode from "../components/BuyPageSections/qrcode";
 
 const BuycryptoPage = () => {
- 
-
-  
-
   const [seemore, setseemore] = useState(false);
-  const handleseeMore = () => {
-    if (seemore === false) {
-      setseemore(true);
-    } else {
-      setseemore(false);
-    }
-  };
+
   const [getApp, setgetApp] = useState(false);
-  const handlegetAppOpening = () => {
-    if (getApp === false) {
-      setgetApp(true);
-    }
-  };
-  const handlegetAppClosing = () => {
-    setgetApp(false);
-  };
+
   const [firstCard, setfirstCard] = useState(false);
   const [secondCard, setsecondCard] = useState(false);
   const [thirdCard, setthirdCard] = useState(false);
@@ -53,91 +29,41 @@ const BuycryptoPage = () => {
   const [seventhCard, setseventhCard] = useState(false);
   const [eighthCard, seteighthCard] = useState(false);
 
-  // event handlers
-  const handlefirstCard = () => {
-    if (firstCard === false) {
-      setfirstCard(true);
-    } else {
-      setfirstCard(false);
-    }
-  };
-
-  const handlesecondCard = () => {
-    if (secondCard === false) {
-      setsecondCard(true);
-    } else {
-      setsecondCard(false);
-    }
-  };
-
-  const handlethirdCard = () => {
-    if (thirdCard === false) {
-      setthirdCard(true);
-    } else {
-      setthirdCard(false);
-    }
-  };
-
-  const handlefourthCard = () => {
-    if (fourthCard === false) {
-      setfourthCard(true);
-    } else {
-      setfourthCard(false);
-    }
-  };
-
-  const handlefifthCard = () => {
-    if (fifthCard === false) {
-      setfifthCard(true);
-    } else {
-      setfifthCard(false);
-    }
-  };
-
-  const handlesixthCard = () => {
-    if (sixthCard === false) {
-      setsixthCard(true);
-    } else {
-      setsixthCard(false);
-    }
-  };
-
-  const handleseventhCard = () => {
-    if (seventhCard === false) {
-      setseventhCard(true);
-    } else {
-      setseventhCard(false);
-    }
-  };
-
-  const handleeighthCard = () => {
-    if (eighthCard === false) {
-      seteighthCard(true);
-    } else {
-      seteighthCard(false);
-    }
-  };
-
   return (
     <div>
       {/* first section */}
-     <BuyPagefirstSection />
-   {/* second section */}
+      <BuyPagefirstSection />
+      {/* second section */}
       <section className="border-t border-b py-10 flex flex-col items-center gap-3">
         <div className="font-bold capitalize">payment methods</div>
         <div className="box lg:w-full flex justify-between gap-18">
-          <img src="https://payload-marketing.moonpay.com/api/media/file/google-pay.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/google-pay.png"
+            alt=""
+          />
 
-           <img src="https://payload-marketing.moonpay.com/api/media/file/mastercard.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/mastercard.png"
+            alt=""
+          />
 
-            <img src="https://payload-marketing.moonpay.com/api/media/file/paypal-2.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/paypal-2.png"
+            alt=""
+          />
 
-             <img src="https://payload-marketing.moonpay.com/api/media/file/visa.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/visa.png"
+            alt=""
+          />
 
-              <img src="https://payload-marketing.moonpay.com/api/media/file/apple-pay.png" alt=""/>
+          <img
+            src="https://payload-marketing.moonpay.com/api/media/file/apple-pay.png"
+            alt=""
+          />
         </div>
       </section>
-         {/* third section */}
+      {/* third section */}
       <section className="box py-10  mt-10">
         <div>
           <h4 className="text-4xl">How to buy crypto on MoonPay</h4>
@@ -224,7 +150,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* fourth section */}
+      {/* fourth section */}
       <section className="py-20">
         <div className="box flex flex-wrap gap-5">
           {seemore
@@ -250,20 +176,20 @@ const BuycryptoPage = () => {
 
         <div
           className="mx-auto w-[150px] hover:bg-[#e0dede]  text-black mt-5 flex items-center justify-center gap-2 rounded-md"
-          onClick={handleseeMore}
+          onClick={() => setseemore((prev) => !prev)}
         >
           {seemore ? "show less asset" : "show all asset"}
           {seemore ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
         </div>
       </section>
-   {/* fifth section */}
+      {/* fifth section */}
       <section className="py-20">
         <img
           src="https://payload-marketing.moonpay.com/api/media/file/Buy.png"
           alt=""
         />
       </section>
-   {/* sixth section */}
+      {/* sixth section */}
       <section className="box">
         <h4 className="text-4xl">
           The better way to buy crypto, now at your fingertips
@@ -298,7 +224,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* seventh section */}
+      {/* seventh section */}
       <section className="box py-10 flex flex-col lg:grid grid-rows-3 grid-cols-2 gap-2">
         <div className="bg-[#f9f8f5] row-span-1 col-span-2 flex flex-col lg:flex-row items-center justify-between gap-5 p-4 lg:p-20 rounded-md">
           <img
@@ -377,7 +303,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* eighth section */}
+      {/* eighth section */}
       <section className="box py-10 flex flex-col lg:grid grid-rows-4 grid-cols-4 gap-4">
         <div className="col-span-4 row-span-4 flex flex-col">
           <h4 className="text-2xl">Round-the-clock protection</h4>
@@ -463,7 +389,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* ninth section */}
+      {/* ninth section */}
       <section className="flex flex-col items-center gap-3 py-20">
         <h4 className="capitalize font-extralight">
           trusted by millions of customers
@@ -473,7 +399,7 @@ const BuycryptoPage = () => {
           35,000,000+
         </div>
       </section>
-   {/* tenth section */}
+      {/* tenth section */}
       <section className="my-20 bg-[url('https://payload-marketing.moonpay.com/api/media/file/Get%20the%20App.png?w=1920&q=90')] bg-no-repeat bg-center bg-cover h-[500px] rounded-3xl flex flex-col items-center justify-center text-center p-20 gap-4">
         <h4 className="text-white font-bold text-3xl lg:text-6xl">
           {" "}
@@ -485,14 +411,17 @@ const BuycryptoPage = () => {
         </div>
         <div
           className="bg-white hover:bg-[#cdbdaf] capitalize font-normal px-2 py-1 rounded-md"
-          onClick={handlegetAppOpening}
+          onClick={() => setgetApp((prev) => !prev)}
         >
           get moonpay app
         </div>
       </section>
-   {/* eleventh section */}
-      <QrCode handlegetAppClosing={handlegetAppClosing} getApp={getApp} />
-         {/* twelveth section */}
+      {/* eleventh section */}
+      <QrCode
+        handlegetAppClosing={() => setgetApp((prev) => !prev)}
+        getApp={getApp}
+      />
+      {/* twelveth section */}
       <section className="box py-20">
         <div className="flex flex-col gap-3">
           <h5 className="text-5xl overflow-y-hidden">
@@ -521,7 +450,7 @@ const BuycryptoPage = () => {
           </Link>
         </div>
       </section>
-         {/* thirteenth section */}
+      {/* thirteenth section */}
       <section>
         <div className=" w-[1200px] flex justify-between gap-4  slideright">
           <div className=" bg-[#eff3f9] flex flex-col  gap-3 rounded-2xl p-4 ">
@@ -703,7 +632,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* fourteenth section */}
+      {/* fourteenth section */}
       <section className="box flex flex-col lg:grid grid-cols-2 gap-2 py-20">
         {/* section header */}
         <h5 className="text-2xl lg:text-4xl w-[60%] col-span-2">
@@ -713,7 +642,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefirstCard}
+            onClick={() => setfirstCard((prev) => !prev)}
           >
             Why buy cryptocurrency?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -740,7 +669,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col h-max gap-3">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlesecondCard}
+            onClick={() => setsecondCard((prev) => !prev)}
           >
             What credit cards can I use to purchase cryptocurrency?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -776,7 +705,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max ">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlethirdCard}
+            onClick={() => setthirdCard((prev) => !prev)}
           >
             How many cryptocurrencies does MoonPay support?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -799,7 +728,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefourthCard}
+            onClick={() => setfourthCard((prev) => !prev)}
           >
             How long does it take to receive crypto purchased on MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -832,7 +761,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlefifthCard}
+            onClick={() => setfifthCard((prev) => !prev)}
           >
             What is cryptocurrency used for?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -862,7 +791,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handlesixthCard}
+            onClick={() => setsixthCard((prev) => !prev)}
           >
             What are the fees to buy crypto with MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -888,7 +817,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handleseventhCard}
+            onClick={() => setseventhCard((prev) => !prev)}
           >
             Is it safe to buy cryptocurrency using MoonPay?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -912,7 +841,7 @@ const BuycryptoPage = () => {
         <div className="bg-[#f9f8f5] hover:bg-[#e6e5e3] px-3 py-5 rounded-4xl col-span-1 flex flex-col gap-3 h-max">
           <div
             className="font-semibold text-xs flex justify-between items-center"
-            onClick={handleeighthCard}
+            onClick={() => seteighthCard((prev) => !prev)}
           >
             Can you implement dollar-cost averaging with crypto?
             <div className="font-light bg-white p-3 rounded-[50%]">
@@ -933,7 +862,7 @@ const BuycryptoPage = () => {
           </div>
         </div>
       </section>
-   {/* fifteenth section */}
+      {/* fifteenth section */}
       <section className="bg-black  rounded-t-4xl py-20">
         <div className="box flex flex-col gap-10">
           <h4 className="text-white text-4xl">

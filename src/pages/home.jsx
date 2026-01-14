@@ -22,15 +22,10 @@ const HomePage = () => {
   };
 
   setInterval(() => {
-    if (fixedCont === false) {
-      setFixedCont(true);
-    }else{
-       setFixedCont(false);
-    }
+    setFixedCont((prev) => !prev);
   }, 5000);
-    
 
-    return (
+  return (
     <div className=" pt-28">
       <div className="box flex flex-col  lg:flex-row justify-between  lg:gap-20 items-center ">
         <div className="flex flex-col  gap-4 text-3xl text-black font-black mt-5">
@@ -148,7 +143,10 @@ const HomePage = () => {
             MoonPay keeps it simple. You hold the keys - we are non-custodial,
             so your crypto always stays in your control.
           </div>
-          <Link to="/buycrypto" className="bg-white w-[50%] lg:w-[20%] text-black capitalize font-bold text-center px-2 py-3 lg:py-6 rounded-4xl hover:bg-[#d8c8ff] hover:duration-1000">
+          <Link
+            to="/buycrypto"
+            className="bg-white w-[50%] lg:w-[20%] text-black capitalize font-bold text-center px-2 py-3 lg:py-6 rounded-4xl hover:bg-[#d8c8ff] hover:duration-1000"
+          >
             buy crypto
           </Link>
         </div>
@@ -558,7 +556,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className=" mt-20 py-20  homeLastSecBG h-[800px] overflow-auto"  >
+      <section className=" mt-20 py-20  homeLastSecBG h-[800px] overflow-auto">
         <div className="bg-white w-[80%] lg:w-[70%] h-full lg:h-full mx-auto p-10 rounded-3xl flex flex-col items-center gap-10">
           <div className="flex gap-2">
             <div className="flex items-center gap-4">
@@ -595,7 +593,11 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className={fixedCont?"fixed bottom-0 right-0 flex justify-end":"hidden"}>
+      <section
+        className={
+          fixedCont ? "fixed bottom-0 right-0 flex justify-end" : "hidden"
+        }
+      >
         <div className=" top-0 bg-black h-[150px] w-[300px] overflow-hidden  rounded-lg QRanim  flex items-center justify-end relative p-4 text-white">
           <div className="absolute text-[10px] text-white left-4 w-[30%] font-bold">
             Download the MoonPay App
