@@ -16,7 +16,7 @@ import Login from "./pages/login";
 function App() {
   return (
     <>
-      <BrowserRouter>
+     
         <ToastContainer
           position="top-right"
           autoClose={3000}
@@ -42,7 +42,7 @@ function App() {
             <Route path="/business" element={<BusinessPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+    
     </>
   );
 }
